@@ -7,7 +7,7 @@ import api from './../../../services/api';
 import { Container } from './styles';
 import { Button } from './../../../styles/components';
 
-export default () => {
+export default ({ setApp }) => {
   const history = useHistory();
   const { url } = useRouteMatch();
 
@@ -20,6 +20,7 @@ export default () => {
         telefone, password
       });
       
+      setApp(true);
       history.push(`${url}/app`)
     } catch(err) {
       alert('Dados Errados')

@@ -1,10 +1,13 @@
 import React from 'react';
 
+import { BrowserRouter as Router } from 'react-router-dom';
+
 import GlobalStyles from './styles/';
 
 import Pages from './pages/routes';
 
-export default () => <>
-  <Pages />
-  <GlobalStyles />
-</> 
+export default () =>
+  <Router>
+    <Pages />
+    <GlobalStyles />
+  </Router> 
