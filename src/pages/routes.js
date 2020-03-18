@@ -7,7 +7,7 @@ import Homepage from './Homepage';
 import AdminMain from './../layouts/Admin/Main';
 
 export default () => {
-  const [app, setApp] = useState(false);
+  const [app, setApp] = useState(true);
 
   return (
     <Switch>
