@@ -41,7 +41,7 @@ export const AddHouse = styled.div`
       top: -150%;
     `
   }
-  background: #3331;
+  background: #111;
   transition: All ease-in-out .3s;
   position: fixed;
   width: 100vw;
@@ -58,7 +58,7 @@ export const AddHouse = styled.div`
     ${props =>
       props.BG.length === 0 ?
         `
-          border: 2px dashed rgba(0,0,0, .5); 
+          border: 2px dashed rgba(255,255,255, .1); 
         `
           :
         ` 
@@ -90,6 +90,7 @@ export const AddHouse = styled.div`
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: -1;
+      color: #fff;
     }
   }
 
@@ -143,7 +144,7 @@ export const AddHouse = styled.div`
 
 export const HousesContainer = styled.main`
   background: #1111;
-  padding: 1rem;
+  padding: 1rem auto 10rem auto;
 `;
 
 export const House = styled.div`

@@ -66,7 +66,8 @@ export default () => {
     try {
       await api.post('/houses', data);
       alert('Adicionado com successo');
-      dontAddHouse()
+      setAgain(again + 1);
+      dontAddHouse();
     } catch(err) {
       alert('Nao foi possivel tente novamente.');
     }
