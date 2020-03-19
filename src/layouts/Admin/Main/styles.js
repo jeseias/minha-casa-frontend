@@ -24,6 +24,60 @@ export const Container = styled.div`
   }
 `;
 
+export const DLE = styled.div`
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  margin: 0 auto;
+  padding: .5rem 2rem;
+  background: #fff;
+  box-shadow: 0 0 15rem rgba(25,0,0, .6);
+  border-radius: .5rem;
+  transition: All ease-in-out .3s;
+
+  ${props => props.visible ? `
+      top: 40%; 
+    ` :
+    `
+      top: -150%;
+    `
+  }
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    >div {
+      padding: .5rem 1rem;
+      color: #fff;
+      border-radius: .5rem;
+      width: 70px;
+      text-align: center;
+      margin: 0 1rem;
+
+      &.delete {
+        background: #0029;
+      }
+
+      &.cancel {
+        background: #D00;
+      }
+    }
+  }
+`;
+
 export const Preview = styled.div`
   background: ${props => `url(${props.BG})`};
   background-size: cover;

@@ -5,6 +5,7 @@ import { Switch, Route, Link } from 'react-router-dom';
 import Adminpage from './Adminpage';
 import Homepage from './Homepage';
 import AdminMain from './../layouts/Admin/Main';
+import AdminMessage from './../layouts/Admin/Message';
 
 export default () => {
   const [app, setApp] = useState(true);
@@ -18,8 +19,10 @@ export default () => {
       </Route>
 
       {
-        app ? 
-          <Route exact path="/admin/app" component={AdminMain} />
+        app ? <>
+            <Route exact path="/admin/app" component={AdminMain} />
+            <Route exact path="/admin/app/message" component={AdminMessage} /> 
+          </>
           :
           <div style={{display:'flex',justifyContent:'center',flexDirection:'column',alignItems:'center'}}>
             <h1>

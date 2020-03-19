@@ -6,11 +6,13 @@ import { MdLocationOn } from 'react-icons/md';
 
 import Navigator from './../Navigation';
 
-import { Container, HousesContainer, House, AddHouse, Preview } from './styles';
+import { Container, HousesContainer, House, AddHouse, Preview, DLE } from './styles';
 
 export default () => {
   const [houses, setHouses] = useState([]);
   const [again, setAgain] = useState(0);
+  const [dle, setDle] = useState(false);
+  const [delHouse, setDelHouse] = useState('')
 
   const [seeAddHouse, setSeeAddHouse] = useState(false);
 
@@ -41,12 +43,14 @@ export default () => {
     loadHouses()
   }, [again]);
 
-  async function handleDeleteHouse(id) {
+  async function handleDeleteHouse() {
     try {
-      await api.delete(`/houses/${id}`);
-      setAgain(again + 1)
-    } catch(err) {
-      alert('Nao foi possivel tente novamante')
+      await api.delete(`/houses/${delHouse}`);
+      setAgain(again + 1);
+      setDle(false)
+      alert('Casa eliminada com successo');
+    } catch (err) {
+      alert('Não foi possivel eliminar a casa');
     }
   }
 
@@ -94,6 +98,14 @@ export default () => {
           size={23}
         /> 
       </div>
+
+      <DLE visible={dle}>
+        <p>Tem certeza que ques <b>ELIMINAR</b></p>
+        <div className="btns">
+          <div className="delete"  onClick={() => handleDeleteHouse()}>Sim</div>
+          <div className="cancel" onClick={() => {setDle(false); setDelHouse('')}}>Cancelar</div>
+        </div>
+      </DLE>
 
       <AddHouse BG={previews} display={seeAddHouse}>
         <div className="img">
@@ -167,7 +179,7 @@ export default () => {
             </div>
             <div className="config">
               <FaTrashAlt 
-                onClick={() => handleDeleteHouse(home.id)}
+                onClick={() => {setDelHouse(home.id); setDle(true)}}
                 size={20} />
               <FaEye size={20} />
               <FaPen size={20} />
