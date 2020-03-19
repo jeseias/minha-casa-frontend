@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import api from './../../../services/api';
-import { MdPhone } from 'react-icons/md';
+
+import { MdPhone, MdClose } from 'react-icons/md';
 import { FaTrashAlt, FaCheck } from 'react-icons/fa';
 
 import Navigator from './../Navigation'; 
@@ -34,6 +35,18 @@ export default () => {
     }
   }
 
+  async function handleMessageState() {
+    try {
+      console.log(cmsg)
+      cmsg.done ?
+        await api.patch(`/messages/${cmsg._id}`, {done: false}) :
+        await api.patch(`/messages/${cmsg._id}`, {done: true}) 
+      setAgain(again +1)
+    } catch (err) {
+      alert('Tente novamente')
+    }
+  }
+
   useEffect(() => {
     loadHouses()
   }, [again]);
@@ -44,6 +57,7 @@ export default () => {
         <h1>Minha Casa</h1>
         <p>Mensagens de interresados</p>
       </header>
+      
       <DLE visible={dle}>
         <p>Tem certeza que ques <b>ELIMINAR</b></p>
         <div className="btns">
@@ -51,6 +65,7 @@ export default () => {
           <div className="cancel" onClick={() => {setDle(false); setMsg('')}}>Cancelar</div>
         </div>
       </DLE>
+     
       <main>
         {messages.map(msg => 
           <MensageBox done={msg.done}>
@@ -64,11 +79,28 @@ export default () => {
                 onClick={() => {setDle(true); setMsg(msg._id)}} 
                 size={15}
               />Apagar</div>
-              <div><FaCheck size={15}/>Marcar Lido</div>
+              {msg.done ?
+                <div><MdClose 
+                  size={15} 
+                  onMouseOver={() =>setMsg(msg)}
+                  onClick={() => {
+                    handleMessageState(); 
+                    }}/> Marcar como não lido
+                </div>
+                : <div><FaCheck 
+                  size={15} 
+                  onMouseOver={() =>setMsg(msg)}
+                  onClick={() => {
+                    handleMessageState(); 
+                    }}
+                  />Marcar Lido
+                </div>
+              }
             </div>
           </MensageBox>  
         )} 
       </main>
+      
       <Navigator />
     </Container>
   )
