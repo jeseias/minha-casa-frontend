@@ -6,8 +6,11 @@ import GlobalStyles from './styles/';
 
 import Pages from './pages/routes';
 
-export default () =>
-  <Router>
-    <Pages />
-    <GlobalStyles />
-  </Router> 
+export default () => {
+  return (
+    <Router>
+      <Pages />
+      <GlobalStyles />
+    </Router> 
+  )
+}
