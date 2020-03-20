@@ -4,6 +4,8 @@ export  const Container = styled.div`
   max-width: 1280px;
   margin: 0 auto;
   padding: 4rem 0;
+  border-bottom: 4px solid #1111;
+
 
   main {
     

@@ -2,6 +2,7 @@ import React from 'react';
 
 import Header from './../../components/Header';
 import Casas from './../../components/Casas';
+import Where from './../../components/Where';
 
 import { Container } from './styles';
 
@@ -10,6 +11,7 @@ export default () => {
     <Container>
       <Header /> 
       <Casas />
+      <Where />
     </Container>
   )
 }
