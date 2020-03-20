@@ -114,7 +114,7 @@ export default () => {
           />
         </div>
         <div className="allImages">
-          {previews.map(img => <Preview BG={img} classname="image" />)} 
+          {previews.map(img => <Preview BG={img} key={img._id} classname="image" />)} 
         </div>
         <div className="inputs">
           <input 

@@ -1,8 +1,13 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+
+import Homepage from './../../layouts/Homepage';
 
 import { Container } from './styles';
 
 export default () => 
   <Container>
-    <h1>Home Page</h1>
+    <Switch>
+      <Route exact path="/" component={Homepage} />
+    </Switch>
   </Container>
