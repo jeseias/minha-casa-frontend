@@ -197,19 +197,49 @@ export const AddHouse = styled.div`
 `;
 
 export const HousesContainer = styled.main`
-  background: #1111;
-  padding: 1rem auto 10rem auto;
 `;
 
 export const House = styled.div`
+  margin: 1rem auto;
+  width: 95%;
+
+  &:last-child {
+    margin-bottom: 8rem;
+  }
 
   .img {
     background: ${props => `url(${props.BG})`};
     background-position: center;
     background-size: cover;
-    width: 90%;
-    height: 150px;
+    width: 100%;
+    height: 200px;
     border-radius: 2px;
     margin: .5rem auto;
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > div {
+      width: auto;
+
+      &.details {
+        text-align: left;
+        
+        .location {
+
+        }
+      }
+
+      &.config {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        text-align: right;
+      }
+    }
   }
 `;

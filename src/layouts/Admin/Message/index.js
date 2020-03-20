@@ -37,7 +37,6 @@ export default () => {
 
   async function handleMessageState() {
     try {
-      console.log(cmsg)
       cmsg.done ?
         await api.patch(`/messages/${cmsg._id}`, {done: false}) :
         await api.patch(`/messages/${cmsg._id}`, {done: true}) 

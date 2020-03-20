@@ -2,7 +2,6 @@ import React, { useEffect, useState, useMemo } from 'react';
 import api from './../../../services/api';
 
 import { FaTrashAlt, FaPen, FaEye, FaPlus, FaCamera } from 'react-icons/fa';
-import { MdLocationOn } from 'react-icons/md';
 
 import Navigator from './../Navigation';
 
@@ -20,7 +19,7 @@ export default () => {
   const [location, setLocation] = useState('');
   const [locationLong, setLocationLong] = useState('');
   const [price, setPrice] = useState('');
-  const [tipo, setTipo] = useState('');
+  const [tipo, setTipo] = useState('Alugeu');
   const [rooms, setRooms] = useState('');
   const [description, setDescription] = useState('');
 
@@ -48,7 +47,6 @@ export default () => {
       await api.delete(`/houses/${delHouse}`);
       setAgain(again + 1);
       setDle(false)
-      alert('Casa eliminada com successo');
     } catch (err) {
       alert('Não foi possivel eliminar a casa');
     }
@@ -69,7 +67,6 @@ export default () => {
     } 
     try {
       await api.post('/houses', data);
-      alert('Adicionado com successo');
       setAgain(again + 1);
       dontAddHouse();
     } catch(err) {
@@ -166,23 +163,40 @@ export default () => {
         {houses.map(home => 
           <House key={home._id} BG={home.thumbnail}>
             <div className="img" />
-            <div className="location">
-              <MdLocationOn size={14}/>
-              {home.location}
-            </div>
-            <div className="details">
-              <div className="location_long">{home.location_long}</div>
-              <div className="price">{home.price} AKZ</div>
-              <div className="t">T{home.norooms}</div>
-              <div className="type">{home.tipo}</div>
-              <div className="description">{home.description}</div>
-            </div>
-            <div className="config">
-              <FaTrashAlt 
-                onClick={() => {setDelHouse(home.id); setDle(true)}}
-                size={20} />
-              <FaEye size={20} />
-              <FaPen size={20} />
+            <div className="bottom">
+              <div className="details">
+                <div className="location">
+                  <b>Local: </b>
+                  {home.location}
+                </div>
+                <div className="location_long">
+                  <b>Local longo: </b>
+                  {home.location_long}
+                </div>
+                <div className="price">
+                  <b>Preço: </b>
+                  {home.price} AKZ
+                </div>
+                <div className="t">
+                  <b>Quartos: </b>
+                  {home.norooms}
+                </div>
+                <div className="type">
+                  <b>Tipo: </b>
+                  {home.tipo}
+                </div>
+                <div className="description">
+                  <b>Descrição: </b>
+                  {home.description}
+                </div>
+              </div>
+              <div className="config">
+                <FaTrashAlt 
+                  onClick={() => {setDelHouse(home.id); setDle(true)}}
+                  size={20} />
+                <FaEye size={20} />
+                <FaPen size={20} />
+              </div>
             </div>
           </House>
         )}
