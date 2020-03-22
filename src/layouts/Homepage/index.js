@@ -13,6 +13,7 @@ export default () => {
       <Header /> 
       <Casas />
       <Where /> 
+      <Footer />
     </Container>
   )
 }
