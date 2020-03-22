@@ -39,6 +39,11 @@ export  const Container = styled.div`
         cursor: pointer;
         color: #333;
       }
+
+      a:link, a:active, a:visited {
+        color: #fff;
+        text-decoration: none;
+      }
     }
   }
 `;

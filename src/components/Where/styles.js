@@ -35,8 +35,8 @@ export const Container = styled.div`
 export const Main = styled.div`
   display: grid;
   grid-template-columns: 150px auto 150px;
-  padding: 0 5rem;
-  grid-gap: 2rem;
+  padding: 0 1rem;
+  grid-gap: 1rem;
   margin-top: 4rem;
 
 
@@ -48,13 +48,44 @@ export const Main = styled.div`
       display: flex;
       flex-wrap: wrap;
 
+      &:nth-child(1) {
+        .img {
+          background: ${props => `url(${props.BG})`};
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          height: 300px;
+        }
+      }
+      &:nth-child(2) {
+        .img {
+          background: ${props => `url(${props.BG1})`};
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          height: 300px;
+        }
+      }
+      &:nth-child(3) {
+        .img {
+          background: ${props => `url(${props.BG2})`};
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          height: 300px;
+        }
+      }
+
+
       > div {
-        width: 50%;
+        width: 50%; 
       }
 
       .details {
         padding: 5rem;
+        background: #1111;
       }
+
     }
   }
 `;

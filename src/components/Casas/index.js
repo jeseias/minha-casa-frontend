@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import api from './../../services/api';
 
@@ -11,7 +12,7 @@ export default () => {
 
   async function loadHouses() {
     try {
-      const home = await api.get('/houses');
+      const home = await api.get('/houses?items=8');
       setHouses(home.data);
     } catch(err) {
       console.log('Atualiza a pagina novamente')
@@ -43,7 +44,7 @@ export default () => {
             </Home>
           )}
         </div>
-        <button>Ver Mais</button>
+        <button><Link to="/casas">Ver Mais</Link></button>
       </main> 
     </Container>
   )
