@@ -3,6 +3,7 @@ import React from 'react';
 import Header from './../../components/Header';
 import Casas from './../../components/Casas';
 import Where from './../../components/Where';
+import Footer from './../../components/Footer';
 
 import { Container } from './styles';
 
@@ -11,7 +12,7 @@ export default () => {
     <Container>
       <Header /> 
       <Casas />
-      <Where />
+      <Where /> 
     </Container>
   )
 }

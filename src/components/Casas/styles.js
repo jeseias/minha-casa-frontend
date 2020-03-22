@@ -6,7 +6,6 @@ export  const Container = styled.div`
   padding: 4rem 0;
   border-bottom: 4px solid #1111;
 
-
   main {
     
     h1 {

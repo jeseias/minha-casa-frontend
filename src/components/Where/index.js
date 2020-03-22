@@ -1,55 +1,44 @@
 import React from 'react';
 
-import Zango from './../../assets/images/zango.jpg';
-import Kilamba from './../../assets/images/kilamba.jpg';
-import Sequele from './../../assets/images/sequele.jpg';
 
-import { Container, HouseBox } from './styles';
+
+import { Container, Main } from './styles';
 
 export default () => {
   return (
     <Container>
       <div className="top">
-        <h1>Arrendamento, Compras ou Vendas de Casas.</h1>
-        <p>Escolhade dentre varias casas a sua para morar</p>
+        <h1>Arrendamento, Compra e vendas de casa</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere eaque repellat ut?</p>
       </div>
-      <HouseBox BG1={Zango} BG2={Kilamba} BG3={Sequele}>
-        <main>
+      <Main>
+        <div className="ad">Google Ad</div>
+        <div className="content">
           <div>
-            <div className="img" /> 
-            <div className="content">
-              <div>
-                <h1>Rapido</h1>
-                <p>
-                  Estas a precisar de uma casa, entre em contacto  e dentro de 24horas, teremos uma casa para si
-                </p>
-              </div>
+            <div className="img"></div>
+            <div className="details">
+              <h1>Super Facil</h1>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis earum praesentium maxime.</p> 
             </div>
           </div>
           <div>
-          <div className="content">
-            <div>
-              <h1>Rapido</h1>
-              <p>
-                Estas a precisar de uma casa, entre em contacto  e dentro de 24horas, teremos uma casa para si
-              </p>
+            <div className="details">
+              <h1>Todos a ganhar</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur odit nulla quo?</p>
             </div>
-            </div>
-            <div className="img" /> 
+            <div className="img"></div>
           </div>
           <div>
-            <div className="img" /> 
-            <div className="content">
-              <div>
-                <h1>Rapido</h1>
-                <p>
-                  Estas a precisar de uma casa, entre em contacto  e dentro de 24horas, teremos uma casa para si
-                </p>
-              </div>
+            <div className="img"></div>
+            <div className="details">
+              <h1>Isto muito maravilha</h1>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti tenetur aspernatur ut!</p>
             </div>
           </div>
-        </main>
-      </HouseBox>
+        </div>
+        <div className="ad">Google Ad</div>
+      </Main>
+      <div className="ad bottom">Google Ad</div>
     </Container>
   )
 }
