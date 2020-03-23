@@ -4,6 +4,76 @@ export const Container = styled.div`
   
 `;
 
+export const SearchBox = styled.div`
+  box-shadow: 0 0 .5rem rgba(0,0,0, .5);
+  transition: All ease-in-out .3s;
+  border-radius: 10px;
+  transform: scale(0);
+  position: absolute;
+  overflow-y: scroll;
+  max-height: 400px;
+  background: #fff;
+  max-width: 750px;
+  display: block;
+  padding: 1rem;
+  width: 100%;
+  z-index: 10;
+  opacity: 0;
+  left: 50%;
+  ${props => 
+    props.visible ?
+      `
+        top: 668px;
+        transform: translate(-50%, -50%) scale(1); 
+        opacity: 1;
+      ` :
+      `
+        transform: scale(0);
+        top: 800px;
+      `
+  }
+
+  .config {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+`;
+
+export const HomeBox = styled.div`
+  display: flex; 
+  padding-bottom: .8rem;
+  margin-bottom: .8rem;
+  border-bottom: 2px solid #DDD;
+
+  .img {
+    width: 80px;
+    height: 80px;
+    grid-area: img;
+    background: ${props => `url(${props.BG}) no-repeat`};
+    background-size: cover;
+    background-position: center;
+    border-radius: 100%;
+  }
+
+  .details {
+    width: calc(100% - 80px);
+    padding: 0 .7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+
+    .location {
+      font-weight: bold;
+      font-size: 1.4rem;
+      text-decoration: underline;
+    }
+  } 
+`;
+
 export const Top = styled.div`
   background: #333;
   display: flex;

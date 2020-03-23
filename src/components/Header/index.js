@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
+import api from './../../services/api';
 
 import Luanda from './../../assets/images/luanda.jpg';
 
 import { FaEnvelope, FaPhone } from 'react-icons/fa';
 
-import { Container, Top, Navigator, Main } from './styles';
+import { Container, Top, Navigator, Main, SearchBox, HomeBox } from './styles';
 
 export default () => {
+  const [searchVisible, setSearchVisible] = useState(false);
+  const [homes, setHomes] = useState([]);
+ 
+  async function loadHouses() {
+    const houses = await api.get('/houses');
+    setHomes(houses.data)
+  }
+
   return (
     <Container>
       <Top>
@@ -33,10 +43,36 @@ export default () => {
         <h1>Encontre A Sua Nova Casa</h1>
         <p>Se tu tas a vender ou alugar uma casa entre em <Link to="/contacto">CONTACTO</Link></p>
         <div>
-          <input type="text" placeholder="Local de onde desejas viver" />
+          <input 
+            placeholder="Local de onde desejas viver" 
+            onClick={() => {
+              loadHouses()
+              setSearchVisible(!searchVisible)
+            }}
+            type="text" 
+          />
           <button>Pesquisar</button>
         </div>
       </Main>
+   
+      <SearchBox 
+        visible={searchVisible}
+        onMouseLeave={() => setSearchVisible(false)}
+      >
+        {
+          homes.map(home => 
+            <HomeBox key={home._id} BG={home.thumbnail}>
+              <div className="img" />
+              <div className="details">
+                <div className="location">{home.location}</div> 
+                <div className="location_long">{home.location_long}</div> 
+                <div className="price">{home.price} AKZ</div> 
+                <div className="rooms">{home.norooms} Quartos</div> 
+              </div>
+            </HomeBox>  
+          )
+        }
+      </SearchBox>
     </Container>
   )
 }
