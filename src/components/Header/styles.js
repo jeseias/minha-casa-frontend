@@ -70,6 +70,12 @@ export const HomeBox = styled.div`
       font-weight: bold;
       font-size: 1.4rem;
       text-decoration: underline;
+      cursor: pointer; 
+      transition: All ease-in-out .3s;
+
+      &:hover {
+        color: orange;
+      }
     }
   } 
 `;

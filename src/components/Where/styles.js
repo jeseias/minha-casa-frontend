@@ -82,8 +82,10 @@ export const Main = styled.div`
       }
 
       .details {
-        padding: 5rem;
         background: #1111;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
     }

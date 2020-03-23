@@ -37,8 +37,10 @@ export default () => {
           <div>
             <div className="img"></div>
             <div className="details">
-              <h1>Isto muito maravilha</h1>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti tenetur aspernatur ut!</p>
+              <div>
+                <h1>Isto muito maravilha</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti tenetur aspernatur ut!</p>
+              </div>
             </div>
           </div>
         </div>

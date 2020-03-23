@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import api from './../../services/api';
 
+import HouseChecker from './../HouseChecker';
+
 import Luanda from './../../assets/images/luanda.jpg';
 
 import { FaEnvelope, FaPhone } from 'react-icons/fa';
@@ -11,7 +13,18 @@ import { Container, Top, Navigator, Main, SearchBox, HomeBox } from './styles';
 
 export default () => {
   const [searchVisible, setSearchVisible] = useState(false);
+  const [visible, setVisible] = useState(false);
+
   const [homes, setHomes] = useState([]);
+  const [currentHouse, setCurrentHouse] = useState({
+    location: '',
+    location_long: '',
+    price: '',
+    norooms: '',
+    images: [''],
+    thumbnail: '',
+    _id: ''
+  });
  
   async function loadHouses() {
     const houses = await api.get('/houses');
@@ -20,6 +33,13 @@ export default () => {
 
   return (
     <Container>
+      <HouseChecker 
+        visible={visible} 
+        house={currentHouse}
+        className="outside"
+        setVisible={setVisible} 
+      />
+
       <Top>
         <p>MINHACASA</p>
         <p><FaEnvelope size={10}/> minhacasa@gmail.com</p>
@@ -64,7 +84,13 @@ export default () => {
             <HomeBox key={home._id} BG={home.thumbnail}>
               <div className="img" />
               <div className="details">
-                <div className="location">{home.location}</div> 
+                <div 
+                  className="location"
+                  onClick={() => {
+                    setCurrentHouse(home);
+                    setVisible(true);
+                  }}
+                >{home.location}</div> 
                 <div className="location_long">{home.location_long}</div> 
                 <div className="price">{home.price} AKZ</div> 
                 <div className="rooms">{home.norooms} Quartos</div> 
