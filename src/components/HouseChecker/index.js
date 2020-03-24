@@ -14,15 +14,26 @@ export default
     <Container 
       visible={visible}
       className="outside"
-      onClick={e => e.target.classList.contains('outside') ? setVisible(false) : true }
+      onClick={e => {
+        if(e.target.classList.contains('outside')) {
+          setVisible(false)
+          setCImg(false)
+        }
+      }}
     >
-      <MdClose className="close" size={30}/> 
       <HouseBox 
         className="super-box"
         BG={cImg || thumbnail}>
         <div className="img" />
         <div className="content">
-          {console.log(thumbnail, _id)}
+          <MdClose 
+            className="close" 
+            size={30}
+            onClick={() => {
+              setVisible(false)
+              setCImg(false)
+            }}
+          /> 
           <div className="images">
             {
               images.map(img =>

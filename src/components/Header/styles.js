@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  
+  transition: All ease-in-out .3s;
 `;
 
 export const SearchBox = styled.div`
@@ -23,23 +23,20 @@ export const SearchBox = styled.div`
   ${props => 
     props.visible ?
       `
-        top: 668px;
-        transform: translate(-50%, -50%) scale(1); 
+        position: relative;
+        bottom: 0;
+        transform: translate(-50%, 5%) scale(1); 
         opacity: 1;
       ` :
       `
         transform: scale(0);
         top: 800px;
       `
-  }
+  } 
 
-  .config {
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  > div:last-child {
+    border-bottom: none;
   }
-
 `;
 
 export const HomeBox = styled.div`
@@ -47,6 +44,7 @@ export const HomeBox = styled.div`
   padding-bottom: .8rem;
   margin-bottom: .8rem;
   border-bottom: 2px solid #DDD;
+  transition: All ease-in-out .3s;
 
   .img {
     width: 80px;
@@ -56,6 +54,11 @@ export const HomeBox = styled.div`
     background-size: cover;
     background-position: center;
     border-radius: 100%;
+    transition: All ease-in-out .3s;
+  }
+
+  &:hover .img {
+    opacity: .8;
   }
 
   .details {
@@ -87,6 +90,7 @@ export const Top = styled.div`
   align-items: center;
   padding: .3rem 4rem;
   color: #fff;
+  transition: All ease-in-out .3s;
 
   p {
     margin: 0 1rem;
@@ -125,7 +129,8 @@ export const Main = styled.header`
   background: ${props => `url(${props.BG})`};
   background-size: cover;
   background-position: center;
-  min-height: 500px;
+  max-height: 500px;
+  height: 500px;
   display: flex; 
   align-items: center;
   flex-direction: column;

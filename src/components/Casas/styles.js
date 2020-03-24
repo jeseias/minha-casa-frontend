@@ -77,6 +77,12 @@ export const Home = styled.div`
 
   &:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 1.2rem #1116;
+
+    .img {
+      opacity: .8;
+      cursor: pointer;
+    }
   }
 
   .img {
@@ -85,6 +91,7 @@ export const Home = styled.div`
     background-position: center;
     width: 100%;
     height: 170px;  
+    transition: All ease-in-out .3s; 
   }
 
   .location {

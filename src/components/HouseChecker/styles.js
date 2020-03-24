@@ -19,9 +19,6 @@ export const Container = styled.div`
     `
   }
 
-  .close {
-
-  }
 `;
 
 export const HouseBox = styled.div`
@@ -51,6 +48,24 @@ export const HouseBox = styled.div`
     width: 35%;
     display: flex;
     flex-direction: column;
+    position: relative;
+
+    .close {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      background: #D05;
+      color: #fff;
+      border-radius: 100%;
+      z-index: 50;
+      transition: All ease-in-out .3s;
+
+      &:hover {
+        cursor: pointer;
+        background: #fff;
+        color: #D05;
+      }
+    }
 
     > div {
       width: 100%;
@@ -104,7 +119,7 @@ export const IMG = styled.div`
   background-size: cover;
   cursor: pointer;
   display: block;
-  filter: blur(2px);
+  filter: blur(1px);
   transition: All ease-in-out .3s;
 
   &:hover {

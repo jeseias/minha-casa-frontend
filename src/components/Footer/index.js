@@ -22,7 +22,7 @@ export default () => {
       </div>
       <div className="bottom">
         <p>&copy; Copyrights 2020. Todos Direitos Reservados.</p>
-        <p>Site Feito por <b><a target="_blank" href="https://jeseiasdomingos.netlify.com">Jeseías Domingos</a></b></p>
+        <p>Site Feito por <b><a rel="noopener noreferrer" target="_blank" href="https://jeseiasdomingos.netlify.com">Jeseías Domingos</a></b></p>
       </div>
     </Container>
   )
