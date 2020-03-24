@@ -6,7 +6,7 @@ import { MdLocationOn, MdAttachMoney, MdClose } from 'react-icons/md';
 import { Container, HouseBox, IMG} from './styles';
 
 export default 
-  ({house:{images,location,location_long,price,norooms,_id,thumbnail,description},visible,setVisible}) => {
+  ({house:{images,location,location_long,price,norooms,_id,thumbnail,description},visible,setVisible,setVisibleBox}) => {
 
   const [cImg, setCImg] = useState(false);
 
@@ -21,6 +21,7 @@ export default
         }
       }}
     >
+
       <HouseBox 
         className="super-box"
         BG={cImg || thumbnail}>
@@ -54,7 +55,12 @@ export default
             <p class="price"><MdAttachMoney size={15}/>{price} AKZ</p>
             <p class="rooms"><FaBed size={15}/>T{norooms}</p>
             <p class="description"><FaPlusCircle size={15}/>{description}</p>
-            <button>Reservar</button>
+            <button
+              onClick={() => {
+                setVisible(false);
+                setVisibleBox(true);
+              }}
+            >Reservar</button>
           </div>
         </div> 
       </HouseBox>

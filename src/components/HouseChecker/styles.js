@@ -6,7 +6,7 @@ export const Container = styled.div`
   width: 100vw;
   height: 100vh;
   background: #1119;
-  z-index: 100;
+  z-index: 90;
   ${props => 
     props.visible ?
     `
@@ -18,7 +18,6 @@ export const Container = styled.div`
       opacity: 0;
     `
   }
-
 `;
 
 export const HouseBox = styled.div`

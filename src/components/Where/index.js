@@ -18,7 +18,7 @@ export default () => {
         <div className="content">
           <div>
             <div className="img"></div>
-            <div className="details">
+            <div className="details one">
               <div>
                 <h1>Super Facil</h1>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis earum praesentium maxime.</p> 
@@ -27,7 +27,7 @@ export default () => {
           </div>
           <div>
             <div className="details">
-              <div>
+              <div className="one">
                 <h1>Todos a ganhar</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur odit nulla quo?</p>
               </div>

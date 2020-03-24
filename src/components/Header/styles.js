@@ -16,7 +16,6 @@ export const SearchBox = styled.div`
   max-width: 750px;
   display: block;
   padding: 1rem;
-  width: 100%;
   z-index: 10;
   opacity: 0;
   left: 50%;
@@ -29,8 +28,7 @@ export const SearchBox = styled.div`
         opacity: 1;
       ` :
       `
-        transform: scale(0);
-        top: 800px;
+        transform: scale(0); 
       `
   } 
 

@@ -1,26 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import HouseChecker from './../HouseChecker';
-
 import api from './../../services/api';
 
 import { Container, Ad, Home } from './styles';
 
-export default () => {
+export default ({ setCurrentHouse, setVisible, setVisibleBox }) => {
   const [again] = useState(0)
-  const [visible, setVisible] = useState(false);
 
-  const [houses, setHouses] = useState([]);
-  const [currentHouse, setCurrentHouse] = useState({
-    location: '',
-    location_long: '',
-    price: '',
-    norooms: '',
-    images: [''],
-    thumbnail: '',
-    _id: ''
-  });
+  const [houses, setHouses] = useState([]); 
 
   async function loadHouses() {
     try {
@@ -47,16 +35,10 @@ export default () => {
         _id: ''
       })
     }  
-  }, [setVisible]);
+  }, [setVisible, setCurrentHouse]);
 
   return (
-    <Container>
-      <HouseChecker 
-        visible={visible} 
-        house={currentHouse}
-        className="outside"
-        setVisible={setVisible} 
-      />
+    <Container> 
       <Ad>
         <div>Google Ad here</div>
       </Ad>
@@ -80,7 +62,12 @@ export default () => {
                 <p className="location_long">{house.location_long}</p>
                 <p className="t">T{house.norooms}</p>
                 <p className="price">{house.price} AKZ</p>
-                <button>Reservar</button>
+                <button
+                  onClick={() => {
+                    setCurrentHouse(house);
+                    setVisibleBox(true);
+                  }}
+                >Reservar</button>
               </div> 
             </Home>
           )}

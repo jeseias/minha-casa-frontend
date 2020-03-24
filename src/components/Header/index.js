@@ -3,31 +3,19 @@ import { Link } from 'react-router-dom';
 
 import api from './../../services/api';
 
-import HouseChecker from './../HouseChecker';
-
 import Luanda from './../../assets/images/luanda.jpg';
 
 import { FaEnvelope, FaPhone } from 'react-icons/fa';
 
 import { Container, Top, Navigator, Main, SearchBox, HomeBox } from './styles';
 
-export default () => {
+export default ({ setVisible, setCurrentHouse }) => {
   const [searchVisible, setSearchVisible] = useState(false);
-  const [visible, setVisible] = useState(false);
 
   const [searchValue, setSearchValue] = useState('');
 
   const [homes, setHomes] = useState([]);
   const [homesFilterd, setFilteredHomes] = useState([]);
-  const [currentHouse, setCurrentHouse] = useState({
-    location: '',
-    location_long: '',
-    price: '',
-    norooms: '',
-    images: [''],
-    thumbnail: '',
-    _id: ''
-  });
  
   async function loadHouses() {
     const houses = await api.get('/houses');
@@ -55,16 +43,10 @@ export default () => {
         _id: ''
       })
     }  
-  }, [setVisible]); 
+  }, [setVisible, setCurrentHouse]); 
 
   return ( 
     <Container>
-      <HouseChecker 
-        visible={visible} 
-        house={currentHouse}
-        className="outside"
-        setVisible={setVisible} 
-      />
 
       <Top>
         <p>MINHACASA</p>

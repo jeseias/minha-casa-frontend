@@ -82,10 +82,26 @@ export const Main = styled.div`
       }
 
       .details {
-        background: #1111;
+        background: #f2f2f2;
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: center;   
+
+        > div {
+          width: 75%;
+
+          h1 {
+            color: #010103;
+            font-size: 2.5rem;
+            margin-bottom: .5rem;
+          }
+
+          p {
+            color: #65554d;
+            font-size: 1.5rem;
+          }
+
+        }
       }
 
     }
