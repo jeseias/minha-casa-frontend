@@ -17,6 +17,7 @@ export default () => {
           <b>minhacasa@gmail.com</b>
         </span>
         <br/>
+        <Link to="/">Inicio</Link>
         <Link to="/casas">Casas Disponivel</Link>
         <Link to="/contacto">Entre Em Contacto</Link> 
       </div>
