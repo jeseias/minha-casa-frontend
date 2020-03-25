@@ -1,8 +1,8 @@
 import React from 'react';
 
-import CL1 from './../../assets/images/cli1.jpg';
-import CL2 from './../../assets/images/cli2.jpg';
-import CL3 from './../../assets/images/cli3.jpg';
+import CL1 from './../../../../assets/images/cli1.jpg';
+import CL2 from './../../../../assets/images/cli2.jpg';
+import CL3 from './../../../../assets/images/cli3.jpg';
 
 import { Container, Main } from './styles';
 

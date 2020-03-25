@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import BookBox from './../../components/BookBox';
 import HouseChecker from './../../components/HouseChecker';
 
-import Header from './../../components/Header';
-import Casas from './../../components/Casas';
-import Where from './../../components/Where';
-import Footer from './../../components/Footer';
+import Header from './components/Header';
+import Casas from './components/Casas';
+import Where from './components/Where';
+import Footer from './components/Footer';
 
 import { Container } from './styles';
 

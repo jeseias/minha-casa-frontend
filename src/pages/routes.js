@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 
 import { Switch, Route, Link } from 'react-router-dom';
 
-import Adminpage from './Adminpage';
 import Homepage from './Homepage';
+import Casaspage from './Casaspage';
+import Contactpage from './Contactpage';
+
+import Adminpage from './Adminpage';
 import AdminMain from './../layouts/Admin/Main';
 import AdminMessage from './../layouts/Admin/Message';
 
@@ -13,6 +16,8 @@ export default () => {
   return (
     <Switch>
       <Route exact path="/" component={Homepage} />
+      <Route exact path="/casas" component={Casaspage} />
+      <Route exact path="/contacto" component={Contactpage} />
 
       <Route exact path="/admin">
         <Adminpage setApp={setApp}/>
