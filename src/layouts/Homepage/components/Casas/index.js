@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import api from './../../../../services/api';
 
@@ -8,22 +7,23 @@ import HomeBox from './../../../../components/HomeBox';
 import { Container, Ad } from './styles';
 
 export default ({ setCurrentHouse, setVisible, setVisibleBox }) => {
-  const [again] = useState(0)
-
   const [houses, setHouses] = useState([]); 
-
-  async function loadHouses() {
-    try {
-      const home = await api.get('/houses?items=8');
-      setHouses(home.data);
-    } catch(err) {
-      console.log('Atualiza a pagina novamente')
-    }
-  }
+  const [url, setUrl] = useState('');  
+  const [items, setItems] = useState(8);  
+  const [done, setDone] = useState(false);
 
   useEffect(() => {
+    async function loadHouses() {
+      try {
+        const home = await api.get(url || `/houses?items=${items}`);
+        setHouses(home.data.houses);
+        setDone(home.data.limitItems);
+      } catch(err) {
+        console.log('Atualiza a pagina novamente')
+      }
+    }
     loadHouses()
-  }, [again]);
+  }, [url, items]);
 
   useEffect(() => {
     if(!setVisible) {
@@ -55,7 +55,20 @@ export default ({ setCurrentHouse, setVisible, setVisibleBox }) => {
             />
           )}
         </div>
-        <button><Link to="/casas">Ver Mais</Link></button>
+        {
+          done ? 
+            <button onClick={() => {
+              setItems(8, () => {
+                setUrl(`/houses?items=${items}`);
+              });
+            }}>Ver Menos</button> 
+              :
+            <button onClick={() => {
+              setItems(items + 4, () => {
+                setUrl(`/houses?items=${items}`);
+              });
+            }}>Ver Mais</button>
+        }
       </main> 
     </Container>
   )

@@ -18,8 +18,8 @@ export default ({ setVisible, setCurrentHouse }) => {
  
   async function loadHouses() {
     const houses = await api.get('/houses');
-    setHomes(houses.data)
-    setFilteredHomes(houses.data)
+    setHomes(houses.data.houses, () => {});
+    setFilteredHomes(houses.data.houses);
   }
 
   function handleSearch(val) {
@@ -49,7 +49,9 @@ export default ({ setVisible, setCurrentHouse }) => {
       <TopHeader />
       <Main BG={Luanda}>
         <h1>Encontre A Sua Nova Casa</h1>
-        <p>Se tu tas a vender, alugar ou a precisar de uma casa entre em <Link to="/contacto">CONTACTO</Link></p>
+        <p>
+          Se tu tas a <span>vender</span>, <span>alugar</span> ou a <span>precisar</span> de uma casa entre em <Link to="">CONTACTO</Link>
+        </p>
         <div>
           <input 
             onChange={e => {

@@ -32,7 +32,7 @@ export default () => {
   async function loadHouses() {
     try {
       const home = await api.get('/houses');
-      setHouses(home.data);
+      setHouses(home.data.houses);
     } catch(err) {
       console.log('Atualiza a pagina novamente')
     }

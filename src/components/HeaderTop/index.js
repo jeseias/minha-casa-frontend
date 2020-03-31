@@ -11,8 +11,8 @@ export default () =>
   <Container>
     <Top>
         <img src={LOGOTEXT} alt="minhacasa"/>
-        <p><FaEnvelope size={10}/> minhacasa@gmail.com</p>
-        <p><FaPhone size={10}/> 936516269</p>
+        <p><FaEnvelope size={14}/> minhacasa@gmail.com</p>
+        <p><FaPhone size={14}/> 936516269</p>
       </Top>
     
       <Navigator>

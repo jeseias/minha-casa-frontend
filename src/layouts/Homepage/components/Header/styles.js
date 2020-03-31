@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  transition: All ease-in-out .3s;
 `;
 
 export const SearchBox = styled.div`
@@ -98,7 +97,7 @@ export const Main = styled.header`
     top: 0;
     left: 0;
     display: block;
-    background: #1117;
+    background: #1111;
     width: 100%;
     height: 100%;
     z-index: 1;
@@ -111,6 +110,8 @@ export const Main = styled.header`
   h1 {
     font-size: 7em;
     color: #fff;
+    text-shadow: 0 0 .3rem rgba(0,0,0, .5);
+    font-weight: bold;
     margin: 10rem auto 0 auto;
   }
 
@@ -121,7 +122,7 @@ export const Main = styled.header`
     margin: 1rem auto 5rem auto;
 
     a:link, a:active, a:visited {
-      color: #fff;
+      color: #cdaa84;
 
       &:hover {
         border-bottom: 2px solid #1117;
@@ -150,13 +151,15 @@ export const Main = styled.header`
     }
 
     button {
+      transition: All ease-in-out .3s;
+      padding: .5rem 2rem;
       height: 60px;
       border: none;
       border-radius: 5px;
-      padding: .5rem 2rem;
       margin-left: .5rem;
       font-size: 1.7rem;
-      transition: All ease-in-out .3s;
+      background: #cdaa84;
+      color: #fff;
 
       &:hover {
         background: orange;
