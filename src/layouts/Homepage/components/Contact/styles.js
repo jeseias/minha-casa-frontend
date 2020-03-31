@@ -7,6 +7,7 @@ export const Container = styled.div`
 export const ContactBox = styled.div`
   padding: 3rem;
   width: 100%;
+  background: #f1f1f1;
 
   main {
     display: flex;
@@ -24,6 +25,7 @@ export const ContactBox = styled.div`
 
       &.details {
         padding: 1rem;
+        background: #fff;
 
         h1 {
           font-size: 2.7rem;

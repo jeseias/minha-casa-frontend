@@ -13,6 +13,10 @@ export const Top = styled.div`
   color: #fff;
   transition: All ease-in-out .3s;
 
+  img {
+    width: 60px;
+  }
+
   p {
     margin: 0 1rem;
   }
@@ -21,10 +25,14 @@ export const Top = styled.div`
 export const Navigator = styled.div`
   background: #fff;
   box-shadow: 0 .5rem 1rem rgba(0,0,0, .5);
-  padding: 1.5rem 6rem;
+  padding: 1rem 6rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  img {
+    width: 170px;
+  }
 
   nav ul {
     list-style: none;

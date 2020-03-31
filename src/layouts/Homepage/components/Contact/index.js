@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 
-import api from './../../services/api';
+import api from './../../../../services/api';
 
-import Beach from './../../assets/images/contact.jpg';
+import Beach from './../../../../assets/images/contact.jpg';
 
 import { FaPaperPlane } from 'react-icons/fa';
 
-import HeaderTop from './../../components/HeaderTop';
-import Footer from './../../components/Footer';
 
 import { Container, ContactBox } from './styles';
 
@@ -39,7 +37,6 @@ export default () => {
 
   return (
     <Container>
-      <HeaderTop />
       <ContactBox BG={Beach}>
         <main>
           <div className="img" />
@@ -74,8 +71,6 @@ export default () => {
           </div> 
         </main>
       </ContactBox>
-
-      <Footer />
     </Container>
   )
 }

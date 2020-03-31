@@ -7,6 +7,7 @@ import Footer from './../../components/Footer';
 import Header from './components/Header';
 import Casas from './components/Casas';
 import Where from './components/Where';
+import Contact from './components/Contact';
 
 import { Container } from './styles';
 
@@ -44,6 +45,7 @@ export default () => {
       <Header setCurrentHouse={setCurrentHouse} setVisible={setVisible}/> 
       <Casas setCurrentHouse={setCurrentHouse} setVisible={setVisible} setVisibleBox={setVisibleBox}/>
       <Where /> 
+      <Contact />
       <Footer />
     </Container>
   )

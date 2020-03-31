@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import api from './../../../../services/api';
 
 import TopHeader from './../../../../components/HeaderTop';
-
 import Luanda from './../../../../assets/images/luanda.jpg';
 
 import { Container, Main, SearchBox, HomeBox } from './styles';
@@ -50,7 +49,7 @@ export default ({ setVisible, setCurrentHouse }) => {
       <TopHeader />
       <Main BG={Luanda}>
         <h1>Encontre A Sua Nova Casa</h1>
-        <p>Se tu tas a vender ou alugar uma casa entre em <Link to="/contacto">CONTACTO</Link></p>
+        <p>Se tu tas a vender, alugar ou a precisar de uma casa entre em <Link to="/contacto">CONTACTO</Link></p>
         <div>
           <input 
             onChange={e => {
