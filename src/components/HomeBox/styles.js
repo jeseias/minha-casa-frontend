@@ -31,6 +31,12 @@ export const Container = styled.div`
 
   .content {
 
+    svg {
+      ${Mixins.MoveElement('4px')};
+      color: ${Colors.dark_brown}; 
+      margin-right: .3rem;
+    }
+
     .location {
       color: ${Colors.dark_color};
       margin: 2rem auto 1rem auto;

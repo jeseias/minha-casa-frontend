@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { MdLocationOn } from 'react-icons/md';
+import { FaBed, FaMoneyBillAlt } from 'react-icons/fa';
+
 import { Container } from './styles';
 
 export default ({house, setVisibleBox, setVisible, setCurrentHouse}) => {
@@ -13,10 +16,21 @@ export default ({house, setVisibleBox, setVisible, setCurrentHouse}) => {
         }}
       />
       <div className="content">
-        <div className="location">{house.location}</div>
-        <p className="location_long">{house.location_long}</p>
-        <p className="t">T{house.norooms}</p>
-        <p className="price">{house.price} AKZ</p>
+        <div className="location">
+          {house.location}
+        </div>
+        <p className="location_long">
+          <MdLocationOn size={15} />
+          {house.location_long}
+        </p>
+        <p className="t">
+          <FaBed size={15} />
+          T{house.norooms}
+        </p>
+        <p className="price">
+          <FaMoneyBillAlt size={15} />
+          {house.price} AKZ
+        </p>
         <button
           onClick={() => {
             setCurrentHouse(house);
