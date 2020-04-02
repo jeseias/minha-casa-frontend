@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+import { MdLocationOn } from 'react-icons/md';
+import { FaBed, FaMoneyBillAlt } from 'react-icons/fa';
+
 import api from './../../../../services/api';
+
 
 import TopHeader from './../../../../components/HeaderTop';
 import Luanda from './../../../../assets/images/luanda.jpg';
 
 import { Container, Main, SearchBox, HomeBox } from './styles';
 
-export default ({ setVisible, setCurrentHouse }) => {
-  const [searchVisible, setSearchVisible] = useState(false);
-
+export default ({ setVisible, setCurrentHouse, searchVisible, setSearchVisible }) => {
   const [searchValue, setSearchValue] = useState('');
 
   const [homes, setHomes] = useState([]);
@@ -45,7 +47,7 @@ export default ({ setVisible, setCurrentHouse }) => {
   }, [setVisible, setCurrentHouse]); 
 
   return ( 
-    <Container>
+    <Container onClick={() => searchVisible ? setSearchVisible(false) : '' }>
       <TopHeader />
       <Main BG={Luanda}>
         <h1>Encontre A Sua Nova Casa</h1>
@@ -58,7 +60,7 @@ export default ({ setVisible, setCurrentHouse }) => {
               handleSearch(e.target.value);
               setSearchVisible(true);
             }}
-            placeholder="Local de onde desejas viver" 
+            placeholder="Onde tu desejas viver ?" 
             value={searchValue}
             onClick={() => {
               setSearchVisible(!searchVisible);
@@ -66,8 +68,7 @@ export default ({ setVisible, setCurrentHouse }) => {
               loadHouses();
             }}
             type="text" 
-          />
-          <button>Pesquisar</button>
+          /> 
           <SearchBox 
             visible={searchVisible}
             onMouseLeave={() => setSearchVisible(false)}
@@ -85,9 +86,18 @@ export default ({ setVisible, setCurrentHouse }) => {
                         setVisible(true);
                       }}
                     >{home.location}</div> 
-                    <div className="location_long">{home.location_long}</div> 
-                    <div className="price">{home.price} AKZ</div> 
-                    <div className="rooms">{home.norooms} Quartos</div> 
+                    <div className="location_long">
+                      <MdLocationOn size={15} />
+                      {home.location_long}
+                    </div> 
+                    <div className="price">
+                      <FaMoneyBillAlt size={12} />
+                      {home.price} AKZ
+                    </div> 
+                    <div className="rooms">
+                      <FaBed size={12} />
+                      {home.norooms} Quartos
+                    </div> 
                   </div>
                 </HomeBox>  
               )

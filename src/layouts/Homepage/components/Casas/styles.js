@@ -1,17 +1,19 @@
 import styled from 'styled-components';
 
+import { Colors, Utils } from './../../../../styles';  
+ 
 export  const Container = styled.div`
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 4rem 0;
   border-bottom: 4px solid #1111;
+  max-width: 1280px;
+  padding: 4rem 0;
+  margin: 0 auto;
 
   main {
     
     h1 {
+      color: ${Colors.dark_color};
       text-align: center;
       font-size: 3rem;  
-      color: #333;
       margin-top: 1rem;
     }
 
@@ -23,15 +25,15 @@ export  const Container = styled.div`
     }
 
     button {
-      display: block;
-      border: none;
+      background: ${Colors.dark_color};
+      ${Utils.SmoothTransition}
       margin: 4rem auto 0 auto;
       padding: 1rem 2rem;
-      font-size: 1.5rem;
-      background: orange;
       border-radius: 5px;
+      font-size: 1.5rem;
+      display: block;
+      border: none;
       color: #fff;
-      transition: All ease-in-out .5s;
 
 
       &:hover {

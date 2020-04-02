@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import BookBox from './../../components/BookBox';
 import HouseChecker from './../../components/HouseChecker';
@@ -12,6 +12,7 @@ import Contact from './components/Contact';
 import { Container } from './styles';
 
 export default () => {
+  const [searchVisible, setSearchVisible] = useState(false);
   const [visibleBox, setVisibleBox] = useState(false);
   const [visible, setVisible] = useState(false);
 
@@ -24,6 +25,12 @@ export default () => {
     thumbnail: '',
     _id: ''
   });
+
+  useEffect(() => {
+    if (searchVisible) {
+      document.addEventListener('scroll', () => setSearchVisible(false)) 
+    }
+  }, [searchVisible]);
 
   return (
     <Container>
@@ -42,7 +49,12 @@ export default () => {
         setVisibleBox={setVisibleBox}
       />
 
-      <Header setCurrentHouse={setCurrentHouse} setVisible={setVisible}/> 
+      <Header 
+        setSearchVisible={setSearchVisible}
+        setCurrentHouse={setCurrentHouse} 
+        searchVisible={searchVisible}
+        setVisible={setVisible}
+      /> 
       <Casas setCurrentHouse={setCurrentHouse} setVisible={setVisible} setVisibleBox={setVisibleBox}/>
       <Where /> 
       <Contact />

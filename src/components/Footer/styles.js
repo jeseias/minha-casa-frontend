@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
+import { Colors, Mixins } from './../../styles';
+
 export const Container = styled.div`
-  background: #333;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  background: ${Colors.dark_brown};
+  ${Mixins.FlexAlign('sa', 'c', '')}; 
   padding: 2rem; 
   color: #aaa;
 
@@ -19,13 +19,11 @@ export const Container = styled.div`
 
   div:nth-child(1) {
 
-
     span {
       padding: .3rem .7rem;
 
       svg {
-        position: relative;
-        top: 3px;
+        ${Mixins.MoveElement('3px')};
         margin-right: .5rem;
       }
     }

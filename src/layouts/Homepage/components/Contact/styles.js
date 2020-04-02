@@ -1,37 +1,37 @@
 import styled from 'styled-components';
 
+import { Colors, Mixins, Utils } from './../../../../styles';
+
 export const Container = styled.div`
-  
+  background: ${Colors.light_bg};
+
+  h1 {
+    color: ${Colors.dark_color};
+    text-align: center;
+    font-size: 3rem;
+  }
 `;
 
 export const ContactBox = styled.div`
   padding: 3rem;
   width: 100%;
-  background: #f1f1f1;
 
   main {
-    display: flex;
-    margin: 7rem auto;
-    width: 77%;
     box-shadow: 0 0 4rem #1114;
+    margin: 5rem auto;
+    display: flex;
+    width: 75%;
     
     > div {
       width: 50%;
 
       &.img {
-        background: ${props => `url(${props.BG}) no-repeat center`};
-        background-size: cover;
+        ${props => Mixins.BGImage(props.BG)};
       }
 
       &.details {
+        background: #fff; 
         padding: 1rem;
-        background: #fff;
-
-        h1 {
-          font-size: 2.7rem;
-          text-align: center;
-          margin-bottom: 1.5rem;
-        }
 
         input, select, textarea {
           border: none;
@@ -56,11 +56,11 @@ export const ContactBox = styled.div`
           font-size: 1.rem;
           border-radius: 10px;
           font-weight: bold;
-          transition: All ease-in-out .3s;
+          ${Utils.SmoothTransition};
           outline: none;
 
           &:hover {
-            background: orange;
+            background: ${Colors.dark_brown};
             cursor: pointer;
             color: #fff;
           }

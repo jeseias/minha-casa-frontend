@@ -1,22 +1,20 @@
 import styled from 'styled-components';
 
+import { Colors, Mixins, Utils } from './../../styles';
+
 export const Container = styled.div`
   
 `;
 
 export const Top = styled.div`
-  background: #202126;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  background: ${Colors.light_brown};
+  ${Mixins.FlexAlign('s', 'c', '')};
+  ${Utils.SmoothTransition};
   padding: .3rem 10rem;
   color: #fff;
-  transition: All ease-in-out .3s;
-  border-bottom: 1px solid #d0a981;
 
   img {
     width: 60px;
-    transition: All ease-in-out .3s; 
   }
 
   p {
@@ -27,28 +25,19 @@ export const Top = styled.div`
 
     svg {
       margin-right: .5rem;
-      position: relative;
-      color: #d0a981;
-      top: 2px;
+      ${Mixins.MoveElement('2px')}
+      color: ${Colors.dark_color};
     }
   }
 `;
 
 export const Navigator = styled.div`
-  background: #202126;
-  box-shadow: 0 1rem 1rem rgba(0,0,0, .5);
-  padding: 1rem 6rem;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  ${Mixins.FlexAlign('sa', 'c', '')};
+  background: ${Colors.dark_color};
+  padding: 1rem 6rem; 
 
   img {
     width: 170px;
-    transition: All ease-in-out .3s;
-
-    &:hover {
-      transform: scale(1.1);
-    }
   }
 
   nav ul {
@@ -61,11 +50,11 @@ export const Navigator = styled.div`
       font-size: 1.3rem;
       padding: 1rem 2rem;
       text-align: center;
-      transition: All ease-in-out .3s;
+      ${Utils.SmoothTransition};
       border-bottom: 2px solid transparent;
 
       &:hover {
-        border-bottom: 2px solid #202126;
+        border-bottom: 2px solid #fff;
         cursor: pointer;
       }
     }

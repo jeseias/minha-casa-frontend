@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
+import { Colors, Mixins } from './../../../../styles';
+
 export const Container = styled.div`
+  background: ${Colors.dark_brown};
   padding: 2rem 5rem;
+
 
   .top {
     margin: 3rem auto 1rem auto;
@@ -10,12 +14,12 @@ export const Container = styled.div`
     h1 {
       font-size: 3rem;
       margin-bottom: .3rem;
-      color: #111;
+      color: #fff;
     }
 
     p {
       font-weight: bold;
-      color: #333;
+      color: #777;
     }
   } 
 
@@ -33,8 +37,8 @@ export const Container = styled.div`
 `;
 
 export const Main = styled.div`
-  display: grid;
   grid-template-columns: 150px auto 150px;
+  display: grid;
   padding: 0 1rem;
   grid-gap: 1rem;
   margin-top: 4rem;
@@ -50,28 +54,19 @@ export const Main = styled.div`
 
       &:nth-child(1) {
         .img {
-          background: ${props => `url(${props.BG})`};
-          background-position: center;
-          background-size: cover;
-          background-repeat: no-repeat;
+          ${props => Mixins.BGImage(props.BG)};
           height: 300px;
         }
       }
       &:nth-child(2) {
         .img {
-          background: ${props => `url(${props.BG1})`};
-          background-position: center;
-          background-size: cover;
-          background-repeat: no-repeat;
+          ${props => Mixins.BGImage(props.BG1)};
           height: 300px;
         }
       }
       &:nth-child(3) {
         .img {
-          background: ${props => `url(${props.BG2})`};
-          background-position: center;
-          background-size: cover;
-          background-repeat: no-repeat;
+          ${props => Mixins.BGImage(props.BG2)};
           height: 300px;
         }
       }
@@ -82,23 +77,21 @@ export const Main = styled.div`
       }
 
       .details {
-        background: #f2f2f2;
-        display: flex;
-        justify-content: center;
-        align-items: center;   
+        ${Mixins.FlexAlign('c', 'c', '')};   
+        background: #fff;
 
         > div {
           width: 75%;
 
           h1 {
-            color: #010103;
-            font-size: 2.5rem;
+            color: ${Colors.dark_brown};
             margin-bottom: .5rem;
+            font-size: 2.5rem;
           }
 
           p {
-            color: #65554d;
-            font-size: 1.5rem;
+            color: #111;
+            font-size: 1.1rem;
           }
 
         }

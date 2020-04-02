@@ -1,14 +1,16 @@
 import styled from 'styled-components';
 
+import { Utils, Mixins, Colors } from './../../styles';
+
 export const Container = styled.div`
-  min-height: 300px;
-  text-align: center;
-  font-weight: bold;
   box-shadow: 0 0 1rem #1113;
+  ${Utils.SmoothTransition}
   padding-bottom: 7rem;
-  border-radius: 5px; 
   position: relative;
-  transition: All ease-in-out .3s;
+  border-radius: 5px; 
+  text-align: center;
+  min-height: 300px;
+  font-weight: bold;
 
   &:hover {
     transform: scale(1.05);
@@ -21,48 +23,47 @@ export const Container = styled.div`
   }
 
   .img {
-    background: ${props => `url(${props.BG})`};
-    background-size: cover;
-    background-position: center;
-    width: 100%;
+    ${props => Mixins.BGImage(props.BG)} 
+    ${Utils.SmoothTransition}; 
     height: 170px;  
-    transition: All ease-in-out .3s; 
-  }
-
-  .location {
-    font-weight: bold;
-    color: #333;
-    margin: 2rem auto 1rem auto;
-    font-size: 1.8rem;
-  }
-
-  .t {
-    margin-bottom: .5rem;
-  }
-
-  .location_long {
-    width: 60%;
-    margin: 0 auto;
-    margin-bottom: .5rem;
+    width: 100%;
   }
 
   .content {
 
+    .location {
+      color: ${Colors.dark_color};
+      margin: 2rem auto 1rem auto;
+      font-weight: bold;
+      font-size: 1.8rem;
+    }
+
+    .t {
+      margin-bottom: .5rem;
+    }
+
+    .location_long {
+      width: 60%;
+      margin: 0 auto;
+      margin-bottom: .5rem;
+    }
+
     button {
-      position: absolute;
-      left: 50%;
+      border: 2px solid ${Colors.brown};
       transform: translateX(-50%);
-      bottom: 1em;
-      background: transparent;
-      color: #333;
       text-transform: uppercase;
-      border-bottom: 2px solid #333;
-      display: block;
+      ${Utils.SmoothTransition}
       margin: 4rem auto 0 auto;
-      padding: 1rem 2rem;
-      font-size: 1.5rem;
+      background: transparent;
+      color: ${Colors.brown};
+      padding: .8rem 1.6rem;
       border-radius: 5px;
-      transition: All ease-in-out .3s;
+      position: absolute;
+      font-size: 1.3rem;
+      font-weight: bold;
+      display: block;
+      bottom: 1em;
+      left: 50%;
     }
   }
 `;

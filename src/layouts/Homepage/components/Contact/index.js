@@ -38,10 +38,10 @@ export default () => {
   return (
     <Container>
       <ContactBox BG={Beach}>
+        <h1>Entre Em Contacto <FaPaperPlane size={27} /> </h1>
         <main>
           <div className="img" />
           <div className="details">
-            <h1>Entre Em Contacto <FaPaperPlane size={27} /> </h1>
             <input 
               placeholder="Seu Nome"
               onChange={e => setName(e.target.value)}
