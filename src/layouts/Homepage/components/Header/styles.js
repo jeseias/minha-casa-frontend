@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
-import { Colors, Utils, Mixins } from './../../../../styles';
+import { Colors, Utils, Mixins, Device } from './../../../../styles';
 
 export const Container = styled.div`
 `;
 
 export const Main = styled.header` 
   ${props => Mixins.BGImage(props.BG)};
-  max-height: 500px;
   height: 500px; 
   ${Mixins.FlexAlign('', 'c', 'c')}; 
   position: relative;
@@ -29,7 +28,7 @@ export const Main = styled.header`
   }
 
   h1 {
-    font-size: 7em;
+    font-size: 6rem;
     color: #fff;
     text-shadow: 0 .3rem 1rem rgba(0,0,0, .4);
     font-weight: bold;
@@ -40,7 +39,7 @@ export const Main = styled.header`
     text-shadow: 0 .3rem 3rem rgba(0,0,0, 1);
     margin: 1rem auto 5rem auto;
     text-transform: uppercase;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: #fff;
 
@@ -73,6 +72,45 @@ export const Main = styled.header`
       }
     }
   }
+
+  @media ${Device.laptop} {
+    text-align: center;
+
+    h1 {
+      font-size: 5rem;
+      padding: 2rem;
+    } 
+
+    p {
+      padding: 1rem;
+    }
+  }
+
+  @media ${Device.tablet} {
+    h1 {
+      margin-top: 6rem;
+    }
+
+    div {
+      input {
+        width: 380px;
+      }
+    }
+  }
+
+  @media ${Device.tabletM} {
+    p {
+      margin-bottom: 1rem;
+    }
+
+    div {
+      input {
+        width: 95%;
+      }
+
+    } 
+  }
+
 `;
 
 export const SearchBox = styled.div`
@@ -154,4 +192,33 @@ export const HomeBox = styled.div`
       }
     }
   } 
+
+  @media ${Device.mobileL} {
+    justify-content: space-around;
+    padding: 1rem;
+
+    .details {
+      
+      * {
+        text-align: right;
+        align-self: flex-end;
+      }
+
+      div {
+        padding-right: 1rem;
+        position: relative;
+
+        &.location {
+          padding-right: 0;
+          ${Mixins.MoveElement('', '2px')};
+        }
+
+        svg {
+          ${Mixins.PositionAbsolute('2px')};
+          right: -1rem;
+        }
+
+      }
+    }
+  }
 `;

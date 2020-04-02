@@ -6,7 +6,6 @@ import { FaBed, FaMoneyBillAlt } from 'react-icons/fa';
 
 import api from './../../../../services/api';
 
-
 import TopHeader from './../../../../components/HeaderTop';
 import Luanda from './../../../../assets/images/luanda.jpg';
 
@@ -50,7 +49,7 @@ export default ({ setVisible, setCurrentHouse, searchVisible, setSearchVisible }
     <Container onClick={() => searchVisible ? setSearchVisible(false) : '' }>
       <TopHeader />
       <Main BG={Luanda}>
-        <h1>Encontre A Sua Nova Casa</h1>
+        <h1>Encontre A Sua Morada</h1>
         <p>
           Se tu tas a <span>vender</span>, <span>alugar</span> ou a <span>precisar</span> de uma casa entre em <Link to="">CONTACTO</Link>
         </p>

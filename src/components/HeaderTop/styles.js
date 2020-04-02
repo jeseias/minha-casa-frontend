@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Colors, Mixins, Utils, Device } from './../../styles';
 
 export const Container = styled.div`
+  position: relative;
   max-width: 100vw;
   width: 100%; 
 
@@ -10,7 +11,7 @@ export const Container = styled.div`
     display: none;
   }
 
-  @media ${Device.MobileL} {
+  @media ${Device.mobileL} {
     position: fixed;
     top: 0;
     left: 0;
