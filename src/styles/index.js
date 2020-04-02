@@ -1,8 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
 
 import { dark_color, light_brown, dark_brown, light_bg, greenish, brown } from  './colors';
-import { FlexAlign, MoveElement, BGImage } from './mixins';
-import { SmoothTransition } from './utils';
+import { FlexAlign, MoveElement, BGImage, PositionAbsolute } from './mixins';
+import { SmoothTransition, CenterElements, AbsoluteCenter } from './utils';
+import { device } from './device';
+
+export const Device = device;
 
 export const Colors = {
   dark_color,
@@ -16,16 +19,17 @@ export const Colors = {
 export const Mixins = {
   FlexAlign,
   MoveElement,
-  BGImage
+  BGImage,
+  PositionAbsolute
 }
 
 export const Utils = {
-  SmoothTransition
+  SmoothTransition,
+  CenterElements,
+  AbsoluteCenter
 }
 
 export default createGlobalStyle`
-
-  @import url('https://fonts.googleapis.com/css?family=Acme|Alegreya:400,700|Baskervville|Pontano+Sans&display=swap');
 
   *, *::after, *::before {
     box-sizing: border-box;
@@ -33,8 +37,9 @@ export default createGlobalStyle`
     padding: 0;
   }
 
-  html, body, #root {
-    min-height: 100vh;
+  html, body, #root { 
+    width: 100vw;
+    overflow-x: hidden;
   }
 
   html {

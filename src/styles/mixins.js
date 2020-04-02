@@ -76,3 +76,9 @@ export const BGImage = (img, lg) => {
     background-position: center;
   `
 } 
+
+export const PositionAbsolute = (t, l) => `
+  position: absolute;
+  left: ${l};
+  top: ${t};
+`
