@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Colors, Utils } from './../../../../styles';  
+import { Colors, Utils, Device } from './../../../../styles';  
  
 export  const Container = styled.div`
   border-bottom: 4px solid #1111;
@@ -47,6 +47,10 @@ export  const Container = styled.div`
         text-decoration: none;
       }
     }
+  }
+
+  @media ${Device.laptopL} {
+    padding: 4rem 2rem;
   }
 `;
 

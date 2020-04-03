@@ -11,11 +11,12 @@ export const Container = styled.div`
     display: none;
   }
 
-  @media ${Device.mobileL} {
+  @media ${Device.tabletM} {
     position: fixed;
-    top: 0;
-    left: 0;
     z-index: 200;
+    padding: 0;
+    left: 0;
+    top: 0;
   }
 `;
 
@@ -50,7 +51,7 @@ export const Top = styled.div`
   }
 
   @media ${Device.tablet} {
-    padding: .3rem 4rem; 
+    padding: 0 4rem; 
 
     svg {
       margin: 0;

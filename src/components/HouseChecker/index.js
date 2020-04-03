@@ -24,9 +24,9 @@ export default
 
       <HouseBox 
         className="super-box"
-        BG={cImg || thumbnail}>
-        <div className="img" />
-        <div className="content">
+        BG={cImg || thumbnail}
+      >
+        <div className="img">
           <MdClose 
             className="close" 
             size={30}
@@ -35,6 +35,8 @@ export default
               setCImg(false)
             }}
           /> 
+        </div>
+        <div className="content">
           <div className="images">
             {
               images.map(img =>

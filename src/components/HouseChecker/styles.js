@@ -1,12 +1,15 @@
 import styled from 'styled-components';
 
+import { Mixins, Utils, Device } from './../../styles';
+
 export const Container = styled.div`
   position: fixed;
   left: 0;
   width: 100vw;
   height: 100vh;
   background: #1119;
-  z-index: 90;
+  z-index: 250;
+  overflow-y: scroll;
   ${props => 
     props.visible ?
     `
@@ -21,26 +24,38 @@ export const Container = styled.div`
 `;
 
 export const HouseBox = styled.div`
-  transform: translate(-50%, -50%);
-  position: absolute;
-  top: 43%;
-  left: 48%;
-  width: 100%;
-  max-width: 950px;
-  height: 570px;
-  background: #fff;
-  border-radius: 10px;
+  ${Mixins.PositionAbsolute('43', '50')} ;
   box-shadow: 0 0 1rem #1111;
-  display: flex;
+  border-radius: 10px;
+  background: #fff;
+  max-width: 950px;
   overflow: hidden;
+  height: 570px;
+  display: flex;
+  width: 100%;
 
   .img {
-    width: 65%;
-    height: 100%;
-    background: ${props => `url(${props.BG})`};
-    background-position: center;
-    background-size: cover;
+    ${props => Mixins.BGImage(props.BG)}
     display: block;
+    height: 100%; 
+    width: 65%;
+
+    .close {
+      ${Utils.SmoothTransition};
+      border-radius: 100%;
+      position: absolute;
+      background: #D05;
+      left: 1.5rem;
+      color: #fff;
+      z-index: 50;
+      top: 1rem;
+
+      &:hover {
+        cursor: pointer;
+        background: #fff;
+        color: #D05;
+      }
+    }
   }
 
   .content { 
@@ -49,37 +64,20 @@ export const HouseBox = styled.div`
     flex-direction: column;
     position: relative;
 
-    .close {
-      position: absolute;
-      top: 1rem;
-      right: 1.5rem;
-      background: #D05;
-      color: #fff;
-      border-radius: 100%;
-      z-index: 50;
-      transition: All ease-in-out .3s;
-
-      &:hover {
-        cursor: pointer;
-        background: #fff;
-        color: #D05;
-      }
-    }
-
     > div {
       width: 100%;
     }
 
     .images {
-      height: 70%;
-      display: grid;
       grid-template-columns: repeat(auto-fill, minmax(100px, 400px)); 
+      display: grid;
+      height: 70%;
     }
 
     .details {
-      height: 30%;
-      padding: 1rem;
       overflow-y: scroll;
+      padding: 1rem;
+      height: 30%;
 
       h2 {
         margin-bottom: 1rem; 
@@ -100,7 +98,7 @@ export const HouseBox = styled.div`
         padding: .5rem 2rem;
         margin: 1rem auto;
         font-size: 1.7rem;
-        transition: All ease-in-out .3s;
+        ${Utils.SmoothTransition};
 
         &:hover {
           background: orange;
@@ -110,16 +108,59 @@ export const HouseBox = styled.div`
       }
     }
   }
+
+  @media ${Device.laptop} {
+    ${Mixins.PositionAbsolute('50', '50')};
+    max-width: 768px;
+    height: 500px;
+  }
+
+  @media ${Device.tablet} {
+    ${Mixins.PositionAbsolute('50', '50')};
+    max-width: 545px;
+    height: 400px;
+  }
+
+  @media ${Device.tabletM} {
+    ${Mixins.PositionAbsolute('55', '50')};
+    overflow-y: scroll;
+    display: block;
+    height: auto;
+    z-index: 250;
+    width: 90%;
+
+    > div {
+      width: 100%;
+
+      &.img {
+        height: 270px;
+        width: 100%;
+      }
+
+      &.content {
+        display: flex;
+        width: 100%;
+
+        .images {
+          width: 100%;
+          grid-template-columns: repeat(auto-fill,minmax(50px, 600px));
+          height: 200px;
+        }
+
+        .details {
+          width: 100%;
+        }
+      }
+    }
+  }
 `;
 
 export const IMG = styled.div`
-  background: ${props => `url(${props.BG})`};
-  background-position: center;
-  background-size: cover;
+  ${props => Mixins.BGImage(props.BG)};
+  ${Utils.SmoothTransition};
+  filter: blur(1px);
   cursor: pointer;
   display: block;
-  filter: blur(1px);
-  transition: All ease-in-out .3s;
 
   &:hover {
     opacity: .8;

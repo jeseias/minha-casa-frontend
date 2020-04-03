@@ -79,6 +79,7 @@ export const BGImage = (img, lg) => {
 
 export const PositionAbsolute = (t, l) => `
   position: absolute;
-  left: ${l};
-  top: ${t};
+  left: ${l}%;
+  top: ${t}%;
+  transform: translate(-50%, -50%);
 `
