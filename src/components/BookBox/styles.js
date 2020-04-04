@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { Mixins, Utils, Colors, Device } from './../../styles';
+
 export const Container = styled.div`
   display: block;
   position: fixed;
@@ -7,7 +9,8 @@ export const Container = styled.div`
   width: 100vw;
   height: 100vh;
   background: #1119;
-  z-index: 100;
+  overflow-y: scroll;
+  z-index: 300;
   ${props => 
     props.visible ?
       `
@@ -22,10 +25,7 @@ export const Container = styled.div`
 `;
 
 export const Main = styled.div`
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  ${Mixins.AbsolutePositionCenter('45', '50')}; 
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 0 1rem #1114;
@@ -43,9 +43,7 @@ export const Main = styled.div`
       }
 
       .img {
-        background: ${props => `url(${props.BG})`};
-        background-position: center;
-        background-size: cover;
+        ${props => Mixins.BGImage(props.BG)};
         height: 200px;
         width: 100%;
       }
@@ -57,10 +55,7 @@ export const Main = styled.div`
     }
 
     &.input {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      flex-direction: column;
+      ${Mixins.FlexAlign('sa', 'c', 'c')}; 
 
       label {
         font-weight: bold;
@@ -69,14 +64,14 @@ export const Main = styled.div`
       }
 
       input {
+        border-bottom: 2px solid transparent;
+        box-shadow: 0 0 .1rem #1113;
+        ${Utils.SmoothTransition};
+        padding: .4rem .8rem;
+        border-radius: 5px;
+        font-size: 1.5rem;
         outline: none;
         border: none;
-        padding: .4rem .8rem;
-        font-size: 1.5rem;
-        transition: All ease-in-out .3s;
-        border-bottom: 2px solid transparent;
-        border-radius: 5px;
-        box-shadow: 0 0 .1rem #1113;
 
         &:focus {
           border-color: orange;
@@ -86,20 +81,40 @@ export const Main = styled.div`
       .btns {
 
         button {
+          background: ${Colors.dark_color};
           padding: 1rem 2rem;
           text-align: center;
-          border: none;
-          background: orange;
           border-radius: 5px;
-          color: #fff;
           font-weight: bold;
           margin: 0 .2rem;
           cursor: pointer;
+          border: none;
+          color: #fff;
 
           &.cancel {
             background: #D04;
           }
         } 
+      }
+    }
+  }
+
+  @media ${Device.tabletM} {
+    top: 50%;
+    flex-wrap: wrap;
+    width: 98%;
+    max-width: 300px;
+    height: auto;
+    overflow-y: scroll;
+    z-index: 300;
+
+    > div {
+      width: 100%;
+      text-align: center;
+
+      input {
+        display: block;
+        margin: .5rem auto;
       }
     }
   }

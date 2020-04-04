@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'; 
 
 import api from './../../services/api';
 
@@ -29,7 +29,7 @@ export default ({ visibleBox, setVisibleBox, house: { location, thumbnail, price
           <h1>Reserva Esta Casa</h1>
           <div className="img" />
           <p><b>Local</b> {location} </p> 
-          <p><b>Preço</b> {price} </p> 
+          <p><b>Preço</b> {price} AKZ</p> 
           <p><b>T</b> {norooms} </p> 
         </div>
         <div className="input">
