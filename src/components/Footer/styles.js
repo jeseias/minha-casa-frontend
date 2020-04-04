@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Colors, Mixins } from './../../styles';
+import { Colors, Mixins, Device } from './../../styles';
 
 export const Container = styled.div`
   background: ${Colors.dark_color};
@@ -38,6 +38,32 @@ export const Container = styled.div`
         }
       }
 
+    }
+  }
+
+  @media ${Device.tablet} {
+
+    .flexbox {
+      display: block;
+      text-align: center;
+
+      div:nth-child(1) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  @media ${Device.mobileL} {
+
+    .flexbox {
+       
+
+      div:nth-child(1) {
+       
+       span {
+         display: block;
+       }
+      }
     }
   }
   
