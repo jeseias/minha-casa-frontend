@@ -11,7 +11,7 @@ import Luanda from './../../../../assets/images/luanda.jpg';
 
 import { Container, Main, SearchBox, HomeBox } from './styles';
 
-export default ({ setVisible, setCurrentHouse, searchVisible, setSearchVisible }) => {
+export default ({ setVisible, setCurrentHouse, searchVisible, setSearchVisible, nav, setNav }) => {
   const [searchValue, setSearchValue] = useState('');
 
   const [homes, setHomes] = useState([]);
@@ -47,7 +47,7 @@ export default ({ setVisible, setCurrentHouse, searchVisible, setSearchVisible }
 
   return ( 
     <Container onClick={() => searchVisible ? setSearchVisible(false) : '' }>
-      <TopHeader />
+      <TopHeader setNav={setNav} nav={nav} />
       <Main BG={Luanda}>
         <h1>Encontre A Sua Morada</h1>
         <p>

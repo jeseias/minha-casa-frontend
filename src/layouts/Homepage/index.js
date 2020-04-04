@@ -15,6 +15,7 @@ export default () => {
   const [searchVisible, setSearchVisible] = useState(false);
   const [visibleBox, setVisibleBox] = useState(false);
   const [visible, setVisible] = useState(false);
+  const [nav, setNav] = useState(false);
 
   const [currentHouse, setCurrentHouse] = useState({
     location: '',
@@ -30,7 +31,11 @@ export default () => {
     if (searchVisible) {
       document.addEventListener('scroll', () => setSearchVisible(false)) 
     }
-  }, [searchVisible]);
+
+    if (nav) {
+      document.addEventListener('scroll', () => setNav(false)) 
+    }
+  }, [searchVisible, nav]);
 
   return (
     <Container>
@@ -54,6 +59,8 @@ export default () => {
         setCurrentHouse={setCurrentHouse} 
         searchVisible={searchVisible}
         setVisible={setVisible}
+        setNav={setNav}
+        nav={nav}
       /> 
       <Casas setCurrentHouse={setCurrentHouse} setVisible={setVisible} setVisibleBox={setVisibleBox}/>
       <Where /> 

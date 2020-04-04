@@ -149,9 +149,10 @@ export const Navigator = styled.div`
     }
 
     nav {
-      background: ${Colors.dark_color};
-      ${Utils.SmoothTransition}; 
       ${Mixins.FlexAlign('s', 's', 'r')};
+      background: ${Colors.dark_color};
+      box-shadow: 1rem 0 2rem #112;
+      ${Utils.SmoothTransition}; 
       position: absolute;
       padding: 2rem;
       height: 100vh;

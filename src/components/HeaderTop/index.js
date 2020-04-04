@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaEnvelope, FaPhone, FaFacebookSquare, FaInstagram, FaLinkedin, FaBars } from 'react-icons/fa';
 
@@ -7,8 +7,7 @@ import LOGOTEXT from './../../assets/images/LOGO-TEXT.png';
 
 import { Container, Top, Navigator } from './styles';
 
-export default () => {
-  const [nav, setNav] = useState(false);
+export default ({ nav, setNav }) => {
 
   return (
     <Container>
