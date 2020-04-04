@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { CenterElements } from './../../../styles/utils';
+import { Utils, Mixins, Colors } from './../../../styles';
 
 export const Container = styled.div`
   h1 {
@@ -9,7 +9,7 @@ export const Container = styled.div`
   }
 
   .addHouse {
-    ${CenterElements};
+    ${Utils.CenterElements};
     position: fixed;
     bottom: 6rem;
     right: 2rem; 
@@ -25,16 +25,15 @@ export const Container = styled.div`
 `;
 
 export const DLE = styled.div`
-  position: fixed;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-  margin: 0 auto;
+  ${Mixins.AbsolutePositionCenter('50', '50')};
+  box-shadow: 0 0 15rem rgba(25,0,0, .6);
+  ${Utils.SmoothTransition};
+  border-radius: .5rem;
+  position: fixed; 
   padding: .5rem 2rem;
   background: #fff;
-  box-shadow: 0 0 15rem rgba(25,0,0, .6);
-  border-radius: .5rem;
-  transition: All ease-in-out .3s;
+  margin: 0 auto;
+  width: 90%;
 
   ${props => props.visible ? `
       top: 40%; 
@@ -44,10 +43,7 @@ export const DLE = styled.div`
     `
   }
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
+  ${Mixins.FlexAlign('sb', 'c', 'c')}; 
 
   p {
     font-size: 1.2rem;
@@ -55,11 +51,9 @@ export const DLE = styled.div`
   }
 
   .btns {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    ${Mixins.FlexAlign('sb', 'c', '')};  
 
-    >div {
+    > div {
       padding: .5rem 1rem;
       color: #fff;
       border-radius: .5rem;
@@ -79,9 +73,7 @@ export const DLE = styled.div`
 `;
 
 export const Preview = styled.div`
-  background: ${props => `url(${props.BG})`};
-  background-size: cover;
-  background-position: center;
+  ${props => Mixins.BGImage(props.BG)};
   min-width: 100%;
   min-height: 80px;
   z-index: 11;
@@ -95,12 +87,13 @@ export const AddHouse = styled.div`
       top: -150%;
     `
   }
-  background: #111;
-  transition: All ease-in-out .3s;
+  ${Utils.SmoothTransition};
+  background: ${Colors.dark_color};
   position: fixed;
   width: 100vw;
   height: 100vh; 
   z-index: 100;
+  overflow-y: scroll;
 
   .img {
     display: block;
@@ -139,10 +132,7 @@ export const AddHouse = styled.div`
     }
 
     svg {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      ${Mixins.AbsolutePositionCenter('50', '50')}; 
       z-index: -1;
       color: #fff;
     }
@@ -183,9 +173,7 @@ export const AddHouse = styled.div`
   }
   
   .config {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    ${Mixins.FlexAlign('c', 'c', '')}; 
   }
 
   button {
@@ -208,9 +196,7 @@ export const House = styled.div`
   }
 
   .img {
-    background: ${props => `url(${props.BG})`};
-    background-position: center;
-    background-size: cover;
+    ${props => Mixins.BGImage(props.BG)}; 
     width: 100%;
     height: 200px;
     border-radius: 2px;
@@ -218,9 +204,7 @@ export const House = styled.div`
   }
 
   .bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    ${Mixins.FlexAlign('sb', 'c', '')}; 
 
     > div {
       width: auto;
@@ -234,10 +218,7 @@ export const House = styled.div`
       }
 
       &.config {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: column;
+        ${Mixins.FlexAlign('sb', 'c', 'c')};  
         text-align: right;
       }
     }

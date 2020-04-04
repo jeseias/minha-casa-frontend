@@ -12,7 +12,7 @@ import { Container, ContactBox } from './styles';
 export default () => {
   const [name, setName] = useState('');
   const [telefone, setTelefone] = useState('');
-  const [tipo, setTipo] = useState('');
+  const [tipo, setTipo] = useState('mensagen');
   const [msg, setMsg] = useState('');
 
   async function handleContact() {
@@ -59,8 +59,8 @@ export default () => {
               value={tipo}
             >
               <option value="mensagen">Mensagen Normal</option>
-              <option value="alugar">Quero Alugar</option>
-              <option value="compra">Quero Compra</option>
+              <option value="alugar">Alugeu</option>
+              <option value="compra">Compra/Venda</option>
             </select>
             <textarea 
               placeholder="Sua mensagen aqui"

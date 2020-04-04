@@ -15,7 +15,7 @@ export default () => {
 
   const [messages, setMessages] = useState([]);
 
-  async function loadHouses() {
+  async function loadMessages() {
     try {
       const msg = await api.get('/messages');
       setMessages(msg.data.messages);
@@ -47,7 +47,7 @@ export default () => {
   }
 
   useEffect(() => {
-    loadHouses()
+    loadMessages()
   }, [again]);
 
   return (
@@ -71,6 +71,7 @@ export default () => {
             <div className="details">
               <div className="name">{msg.name}</div>
               <div className="message">{msg.message}</div>
+              <div className="type">{msg.tipo}</div>
             </div>
             <div className="config">
               <div className="telefone"><MdPhone size={15}/>{msg.telefone}</div>

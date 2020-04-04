@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
+import { Colors, Utils, Mixins } from './../../../styles';
+
 export const Container = styled.div`
+  padding-bottom: 4rem;
+  
   header {
 
     h1 {
@@ -20,16 +24,15 @@ export const Container = styled.div`
 `;
 
 export const DLE = styled.div`
-  position: fixed;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-  margin: 0 auto;
+  ${Mixins.AbsolutePositionCenter('50', '50')}
+  box-shadow: 0 0 15rem rgba(25,0,0, .6);
+  ${Utils.SmoothTransition};
+  border-radius: .5rem;
   padding: .5rem 2rem;
   background: #fff;
-  box-shadow: 0 0 15rem rgba(25,0,0, .6);
-  border-radius: .5rem;
-  transition: All ease-in-out .3s;
+  position: fixed; 
+  margin: 0 auto;
+  width: 90%;
 
   ${props => props.visible ? `
       top: 40%; 
@@ -39,10 +42,7 @@ export const DLE = styled.div`
     `
   }
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
+  ${Mixins.FlexAlign('sb', 'c', 'c')}; 
 
   p {
     font-size: 1.2rem;
@@ -50,11 +50,9 @@ export const DLE = styled.div`
   }
 
   .btns {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    ${Mixins.FlexAlign('sb', 'c', '')};  
 
-    >div {
+    > div {
       padding: .5rem 1rem;
       color: #fff;
       border-radius: .5rem;
@@ -63,11 +61,11 @@ export const DLE = styled.div`
       margin: 0 1rem;
 
       &.delete {
-        background: #0029;
+        background: ${Colors.dark_color};
       }
 
       &.cancel {
-        background: #D00;
+        background: #D04;
       }
     }
   }
@@ -101,28 +99,27 @@ export const MensageBox = styled.div`
       border-radius: .3rem;
       margin: .5rem auto;
     }
+
+    .type {
+      font-weight: bold;
+      text-decoration: undeline;
+    }
   }
 
   .config {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: #333;
-    color: #f4f4f4;
-    padding: 1rem .3rem;
-    margin-top: 1rem;
+    ${Mixins.FlexAlign('sa', 'c', '')};  
     border-radius: .4rem;
+    padding: 1rem .3rem;
+    background: #333;
+    margin-top: 1rem;
+    color: #f4f4f4;
 
     > div {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      ${Mixins.FlexAlign('sb', 'c', '')};  
 
       svg {
         margin-right: .5rem;
       }
     }
   }
-
-
 `;

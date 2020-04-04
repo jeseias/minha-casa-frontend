@@ -7,6 +7,7 @@ import Homepage from './Homepage';
 import Adminpage from './Adminpage';
 import AdminMain from './../layouts/Admin/Main';
 import AdminMessage from './../layouts/Admin/Message';
+import AdminReservas from './../layouts/Admin/Reservas';
 
 export default () => {
   const [app, setApp] = useState(true);
@@ -23,6 +24,7 @@ export default () => {
         app ? <>
             <Route exact path="/admin/app" component={AdminMain} />
             <Route exact path="/admin/app/message" component={AdminMessage} /> 
+            <Route exact path="/admin/app/reservas" component={AdminReservas} /> 
           </>
           :
           <div style={{display:'flex',justifyContent:'center',flexDirection:'column',alignItems:'center'}}>

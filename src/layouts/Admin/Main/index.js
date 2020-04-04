@@ -154,7 +154,7 @@ export default () => {
           ></textarea>
         </div>
         <div className="config">
-          <button onClick={() => handleAddHouse()} >Adicionar</button>
+          <button onClick={() => handleAddHouse()}>Adicionar</button>
           <button onClick={() => dontAddHouse()} >Cancel</button>
         </div>
       </AddHouse>

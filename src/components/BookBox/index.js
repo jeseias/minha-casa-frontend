@@ -17,6 +17,8 @@ export default ({ visibleBox, setVisibleBox, house: { location, thumbnail, price
           house: _id
         });
         setVisibleBox(false);
+        setName('');
+        setTelefone('');
         alert('Reserva Feita Com Successo')
       } else {
         alert('Os campo nome e telefone são obrigatorios. Preencha os');
