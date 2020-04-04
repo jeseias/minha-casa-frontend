@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Colors, Mixins, Utils } from './../../../../styles';
+import { Colors, Mixins, Utils, Device } from './../../../../styles';
 
 export const Container = styled.div`
   background: ${Colors.light_bg};
@@ -64,6 +64,52 @@ export const ContactBox = styled.div`
             cursor: pointer;
             color: #fff;
           }
+        }
+      }
+    }
+  }
+
+  @media ${Device.laptop} {
+
+    main {
+      width: 95%;
+    }
+  }
+
+  @media ${Device.tablet} {
+    padding: 3rem 1.5rem;
+  }
+
+  @media ${Device.tabletM} {
+    padding: 3rem .5rem;
+
+    main {
+
+      > div {
+
+        .details {
+          padding: 1rem .3rem;
+        }
+      }
+    }
+  }
+
+  @media ${Device.mobileL} {
+    padding: 3rem .5rem;
+
+    main {
+      flex-wrap: wrap-reverse;
+      width: 98%;
+
+      > div {
+        width: 100%;
+
+        &.img {
+          display: none;
+        }
+
+        &.details {
+          padding: 1rem;
         }
       }
     }
