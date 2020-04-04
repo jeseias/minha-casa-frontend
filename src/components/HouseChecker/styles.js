@@ -24,7 +24,7 @@ export const Container = styled.div`
 `;
 
 export const HouseBox = styled.div`
-  ${Mixins.PositionAbsolute('43', '50')} ;
+  ${Mixins.AbsolutePositionCenter('43', '50')} ;
   box-shadow: 0 0 1rem #1111;
   border-radius: 10px;
   background: #fff;
@@ -110,19 +110,19 @@ export const HouseBox = styled.div`
   }
 
   @media ${Device.laptop} {
-    ${Mixins.PositionAbsolute('50', '50')};
+    ${Mixins.AbsolutePositionCenter('50', '50')};
     max-width: 768px;
     height: 500px;
   }
 
   @media ${Device.tablet} {
-    ${Mixins.PositionAbsolute('50', '50')};
+    ${Mixins.AbsolutePositionCenter('50', '50')};
     max-width: 545px;
     height: 400px;
   }
 
   @media ${Device.tabletM} {
-    ${Mixins.PositionAbsolute('55', '50')};
+    ${Mixins.AbsolutePositionCenter('55', '50')};
     overflow-y: scroll;
     display: block;
     height: auto;

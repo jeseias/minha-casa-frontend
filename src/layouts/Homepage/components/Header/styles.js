@@ -214,7 +214,7 @@ export const HomeBox = styled.div`
         }
 
         svg {
-          ${Mixins.PositionAbsolute('2px')};
+          ${Mixins.PositionAbsolute('10')};
           right: -1rem;
         }
 

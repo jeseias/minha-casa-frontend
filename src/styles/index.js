@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 import { dark_color, light_brown, dark_brown, light_bg, greenish, brown } from  './colors';
-import { FlexAlign, MoveElement, BGImage, PositionAbsolute } from './mixins';
+import { FlexAlign, MoveElement, BGImage, PositionAbsolute, AbsolutePositionCenter } from './mixins';
 import { SmoothTransition, CenterElements, AbsoluteCenter } from './utils';
 import { device } from './device';
 
@@ -20,7 +20,8 @@ export const Mixins = {
   FlexAlign,
   MoveElement,
   BGImage,
-  PositionAbsolute
+  PositionAbsolute,
+  AbsolutePositionCenter
 }
 
 export const Utils = {

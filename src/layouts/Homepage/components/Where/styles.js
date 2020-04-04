@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 
-import { Colors, Mixins } from './../../../../styles';
+import { Colors, Mixins, Device } from './../../../../styles';
 
 export const Container = styled.div`
   background: ${Colors.dark_brown};
   padding: 2rem 5rem;
-
 
   .top {
     margin: 3rem auto 1rem auto;
@@ -33,6 +32,18 @@ export const Container = styled.div`
       margin: 3rem auto;
       height: 130px;
     }
+  }
+
+  @media ${Device.laptop} {
+    padding: 2rem;
+  }
+
+  @media ${Device.mobileL} {
+    padding: 2rem 1rem;
+  }
+
+  @media ${Device.mobileM} {
+    padding: 2rem 0;
   }
 `;
 
@@ -96,8 +107,39 @@ export const Main = styled.div`
 
         }
       }
-
     }
+  }
+
+  @media ${Device.tablet} {
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px auto 150px;
+    padding: 0 3rem;
+  }
+
+  @media ${Device.tablet} { 
+    padding: 0 2rem;
+  }
+
+  @media ${Device.mobileL} { 
+    padding: 0 1rem;
+
+    .content {
+
+      > div {
+
+        .details {
+          ${Mixins.FlexAlign('c', 'c', '')};   
+          background: #fff;
+
+          > div {
+            width: 100%;
+            padding: .5rem;  
+          }
+        }
+      }
+    }
+
+
   }
 `;
 

@@ -75,7 +75,6 @@ export const Top = styled.div`
     
     img {
       display: block;
-      margin: 0 0 .3rem;
     }
 
     svg {
@@ -98,7 +97,7 @@ export const Top = styled.div`
         margin-left: 0;
       }
     }
-  }
+  } 
 `;
 
 export const Navigator = styled.div`
@@ -132,13 +131,9 @@ export const Navigator = styled.div`
 
   @media ${Device.tablet} {
     padding: 1rem 2rem;
-  }
-
+  } 
   @media ${Device.tabletM} {
     padding: 1rem 0;
-  }
-
-  @media ${Device.tabletM} {
 
     img {
       ${Mixins.MoveElement('' ,'-90px')};
@@ -192,9 +187,16 @@ export const Navigator = styled.div`
     }
   }
 
+  @media (max-width: 350px) {
+    img {
+      margin: 0;
+      ${Mixins.MoveElement('', '-70px')}
+    }
+  }
+
   @media ${Device.mobileS} {
     img {
-      ${Mixins.MoveElement('' ,'-65px')};
+      ${Mixins.MoveElement('' ,'-60px')};
       margin: 0;
     }
   }
