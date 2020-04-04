@@ -15,12 +15,12 @@ export default ({ nav, setNav }) => {
         <div>
           <img src={LOGOTEXT} alt="minhacasa"/>
           <p><FaEnvelope size={14}/> minhacasa@gmail.com</p>
-          <p><FaPhone size={14}/> 936516269</p>
+          <p><FaPhone size={14}/> 943666464</p>
         </div>
         <div>
-          <Link to="/" ><FaFacebookSquare size={16} /></Link>
-          <Link to="/" ><FaInstagram size={16} /></Link>
-          <Link to="/" ><FaLinkedin size={16} /></Link> 
+          <a href="/" ><FaFacebookSquare size={16} /></a>
+          <a href="/" ><FaInstagram size={16} /></a>
+          <a href="/" ><FaLinkedin size={16} /></a> 
         </div>
       </Top>
       <Navigator visible={nav}>

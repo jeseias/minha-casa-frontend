@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Mixins, Utils, Device } from './../../styles';
+import { Mixins, Utils, Device, Colors } from './../../styles';
 
 export const Container = styled.div`
   position: fixed;
@@ -122,12 +122,14 @@ export const HouseBox = styled.div`
   }
 
   @media ${Device.tabletM} {
-    ${Mixins.AbsolutePositionCenter('55', '50')};
+    ${Mixins.AbsolutePositionCenter('50', '50')};
     overflow-y: scroll;
     display: block;
     height: auto;
     z-index: 250;
     width: 90%;
+    overflow-y: scroll;
+    max-height: 450px;
 
     > div {
       width: 100%;
@@ -142,9 +144,13 @@ export const HouseBox = styled.div`
         width: 100%;
 
         .images {
+          background: ${Colors.dark_color};
+          padding: .5rem;
           width: 100%;
-          grid-template-columns: repeat(auto-fill,minmax(50px, 600px));
-          height: 200px;
+          grid-template-columns: repeat(4,1fr);
+          grid-gap: .5rem;
+          max-height: 200px;
+          overflow-y: scroll;
         }
 
         .details {
@@ -158,12 +164,15 @@ export const HouseBox = styled.div`
 export const IMG = styled.div`
   ${props => Mixins.BGImage(props.BG)};
   ${Utils.SmoothTransition};
-  filter: blur(1px);
   cursor: pointer;
   display: block;
 
   &:hover {
-    opacity: .8;
-    filter: blur(0);
+    opacity: .9;
   }
+
+  @media ${Device.tabletM} { 
+    height: 70px;
+  }
+
 `;

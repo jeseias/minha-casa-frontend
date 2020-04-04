@@ -10,8 +10,8 @@ export default () => {
   return (
     <Container>
       <div className="top">
-        <h1>Arrendamento, Compra e vendas de casa</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere eaque repellat ut?</p>
+        <h1>Arrendamento, Compra e venda de casas</h1>
+        <p>Portal seguro, rápido e simples para achar uma casa</p>
       </div>
       <Main BG={CL1} BG1={CL2} BG2={CL3}>
         <div className="ad">Google Ad</div>
@@ -20,16 +20,21 @@ export default () => {
             <div className="img"></div>
             <div className="details one">
               <div>
-                <h1>Super Facil</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis earum praesentium maxime.</p> 
+                <h1>Seguro</h1>
+                <p>
+                  Todos os nossos clientes feliz com a qualidade dos nossos serviços. Não a motivo para reclamação.
+                </p> 
               </div>
             </div>
           </div>
           <div>
             <div className="details">
               <div className="one">
-                <h1>Todos a ganhar</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur odit nulla quo?</p>
+                <h1>Rápido</h1>
+                <p>
+                  Não importa onde estejam, alguém precisando de uma casa, é so tu pesquisares ou entrares em contacto, 
+                  que a nossa equipa cuida do resto. E em pouco voltamos para se com otimos resultados.
+                </p>
               </div>
             </div>
             <div className="img"></div>
@@ -38,8 +43,8 @@ export default () => {
             <div className="img"></div>
             <div className="details">
               <div>
-                <h1>Isto muito maravilha</h1>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti tenetur aspernatur ut!</p>
+                <h1>Simples</h1>
+                <p>Que nem 123. Nada de um outro mundo, a sua casa esta a distancia de um click.</p>
               </div>
             </div>
           </div>

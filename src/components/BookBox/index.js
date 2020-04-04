@@ -10,13 +10,17 @@ export default ({ visibleBox, setVisibleBox, house: { location, thumbnail, price
 
   async function hanldeReserve() {
     try {
-      await api.post('/bookings', {
-        name,
-        telefone,
-        house: _id
-      });
-      setVisibleBox(false);
-      alert('Reserva Feita Com Successo')
+      if(name && telefone) {
+        await api.post('/bookings', {
+          name,
+          telefone,
+          house: _id
+        });
+        setVisibleBox(false);
+        alert('Reserva Feita Com Successo')
+      } else {
+        alert('Os campo nome e telefone são obrigatorios. Preencha os');
+      }
     } catch (err) {
       alert('Houve um erro tente novamente')
     }

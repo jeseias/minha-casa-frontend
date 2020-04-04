@@ -21,7 +21,6 @@ export default
         }
       }}
     >
-
       <HouseBox 
         className="super-box"
         BG={cImg || thumbnail}
