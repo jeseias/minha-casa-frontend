@@ -36,7 +36,7 @@ export default () => {
   }
 
   return (
-    <Container>
+    <Container id="contacto">
       <ContactBox BG={Beach}>
         <h1>Entre Em Contacto <FaPaperPlane size={27} /> </h1>
         <main>

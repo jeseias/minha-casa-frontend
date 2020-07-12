@@ -33,7 +33,7 @@ export default () => {
                 <h1>Rápido</h1>
                 <p>
                   Não importa onde estejam, alguém precisando de uma casa, é so tu pesquisares ou entrares em contacto, 
-                  que a nossa equipa cuida do resto. E em pouco voltamos para se com otimos resultados.
+                  que a nossa equipa cuida do resto. E em pouco tempo voltamos para se com otimos resultados.
                 </p>
               </div>
             </div>
@@ -44,7 +44,10 @@ export default () => {
             <div className="details">
               <div>
                 <h1>Simples</h1>
-                <p>Que nem 123. Nada de um outro mundo, a sua casa esta a distancia de um click.</p>
+                <p>
+                  Que nem 123. Nada de um outro mundo, a sua nova e otima casa esta a distancia de um click. Não percas
+                  mais tempo entre já em contacto
+                </p>
               </div>
             </div>
           </div>

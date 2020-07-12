@@ -1,22 +1,33 @@
 import styled from 'styled-components';
 
-import { grey_brown, light_bg } from './../../../styles/colors';
-import { CenterElements } from './../../../styles/utils';
-import { MoveElement } from './../../../styles/mixins';
+import { Colors, Mixins, Utils } from './../../../styles'; 
 
 export const Container = styled.div`
-  background: ${light_bg}; 
-  ${CenterElements}
+  background: ${Colors.dark_color}; 
+  ${Utils.CenterElements};
   width: 100vw;
   height: 100vh; 
 
+  img {
+    width: 300px;
+    margin-bottom: 1.4rem;
+    ${Mixins.MoveElement('-60px')};
+  }
+
   main {
-    ${MoveElement('-50px')};
-    background: ${grey_brown};
-    width: 100%;
-    height: 200px;
-    max-width: 250px;
-    padding: 1rem;
+    ${Mixins.MoveElement('-50px')};
+    width: 100%; 
+    padding: .5rem;
     border-radius: 1rem;
+    text-align: center;
+    color: #fff;
+
+
+    input {
+      width: 90%;
+      padding: .5rem 1rem;
+      border: none;
+      margin: .5rem auto;
+    }
   }
 `;

@@ -10,7 +10,7 @@ import AdminMessage from './../layouts/Admin/Message';
 import AdminReservas from './../layouts/Admin/Reservas';
 
 export default () => {
-  const [app, setApp] = useState(true);
+  const [app, setApp] = useState(false);
 
   return (
     <Switch>

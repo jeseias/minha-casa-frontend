@@ -168,6 +168,16 @@ export const Navigator = styled.div`
       ul {
         padding-top: 2.5rem;
 
+        a {
+          padding: .8rem; 
+          text-decoration: none;
+          color: #fff;
+          margin-right: .3rem;
+          text-align: center;  
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+        }
+
         &::before {
           display: block;
           content: "Menu";
@@ -178,10 +188,20 @@ export const Navigator = styled.div`
           margin-bottom: 2rem;
         }
 
+        & > * {
+          display: inline-block;
+          color: #fff;
+          font-size: 2rem;
+        }
+
         a:link, a:active, a:visited {
-          display: block;
-          padding: 1rem 0;
-          text-align: left;
+          padding: .8rem; 
+          text-decoration: none;
+          color: #fff;
+          margin-right: .3rem;
+          text-align: center;  
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
         }
       }
 

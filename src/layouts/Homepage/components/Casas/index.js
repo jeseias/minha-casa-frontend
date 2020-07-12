@@ -44,7 +44,7 @@ export default ({ setCurrentHouse, setVisible, setVisibleBox }) => {
       <Ad><div>Google Ad here</div></Ad>
       <main>
         <h1>Explore Casas de Luanda</h1>
-        <div>
+        <div id="casas">
           {houses.map(house => 
             <HomeBox 
               house={house} 

@@ -4,6 +4,8 @@ import { useHistory, useRouteMatch } from 'react-router-dom';
 
 import api from './../../../services/api';
 
+import LOGO from './../../../assets/images/logo.png'
+
 import { Container } from './styles';
 import { Button } from './../../../styles/components';
 
@@ -29,8 +31,8 @@ export default ({ setApp }) => {
 
   return (
     <Container>
+      <img src={LOGO} alt="imagen do site"/>
       <main>
-        <h1>Nossa Casa</h1>
         <input 
           value={telefone}
           onChange={ e => setTelefone(e.target.value)}

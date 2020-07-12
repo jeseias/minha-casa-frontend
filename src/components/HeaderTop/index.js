@@ -1,5 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { Link } from 'react-scroll';
+
 import { FaEnvelope, FaPhone, FaFacebookSquare, FaInstagram, FaLinkedin, FaBars } from 'react-icons/fa';
 
 import LOGO from './../../assets/images/logo.png';
@@ -30,9 +32,30 @@ export default ({ nav, setNav }) => {
         </div>
         <nav >
           <ul>
-            <Link to="/">Inicio</Link>
-            <Link to="/">Casas</Link>
-            <Link to="/">Contacto</Link>
+            <Link 
+              href=''
+              to='/'
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration= {500}> Incio </Link>
+            <Link 
+              href=''
+              to='casas'
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration= {500}> Casas </Link> 
+            <Link 
+              href=''
+              to='contacto'
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration= {500}> Contacto </Link>  
           </ul>
         </nav>
       </Navigator>
