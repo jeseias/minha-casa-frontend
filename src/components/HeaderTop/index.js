@@ -15,7 +15,9 @@ export default ({ nav, setNav }) => {
     <Container>
       <Top visible={nav}>
         <div>
-          <img src={LOGOTEXT} alt="minhacasa"/>
+          <a href='/admin'>
+            <img src={LOGOTEXT} alt="minhacasa"/>
+          </a>
           <p><FaEnvelope size={14}/> minhacasa@gmail.com</p>
           <p><FaPhone size={14}/> 943666464</p>
         </div>
