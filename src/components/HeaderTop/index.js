@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link as AnchorLink } from 'react-router-dom';
 import { Link } from 'react-scroll';
 
 import { FaEnvelope, FaPhone, FaFacebookSquare, FaInstagram, FaLinkedin, FaBars } from 'react-icons/fa';
@@ -15,9 +15,9 @@ export default ({ nav, setNav }) => {
     <Container>
       <Top visible={nav}>
         <div>
-          <a href='/admin'>
+          <AnchorLink to='/admin' >
             <img src={LOGOTEXT} alt="minhacasa"/>
-          </a>
+          </AnchorLink>
           <p><FaEnvelope size={14}/> minhacasa@gmail.com</p>
           <p><FaPhone size={14}/> 943666464</p>
         </div>
