@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export default axios.create({
-  baseURL: 'https://minhcasa.herokuapp.com/'  
+  baseURL: 'https://minhcasa.herokuapp.com/api/v1'  
 });
