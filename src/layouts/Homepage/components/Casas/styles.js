@@ -19,7 +19,7 @@ export  const Container = styled.div`
 
     > div {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px,auto));
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 25rem));
       grid-gap: 2.5rem;
       padding-top: 3rem;
     }

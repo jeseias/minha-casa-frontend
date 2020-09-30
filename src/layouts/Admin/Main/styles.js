@@ -93,7 +93,7 @@ export const AddHouse = styled.div`
   width: 100vw;
   height: 100vh; 
   z-index: 100;
-  overflow-y: scroll;
+  overflow: scroll;
 
   .img {
     display: block;
@@ -224,3 +224,10 @@ export const House = styled.div`
     }
   }
 `;
+
+export const NoHouse = styled.p`
+  width: 90%;
+  margin: 40% auto;
+  font-size: 2rem;
+  text-align: center;
+`

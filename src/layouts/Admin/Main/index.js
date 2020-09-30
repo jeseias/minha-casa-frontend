@@ -5,7 +5,7 @@ import { FaTrashAlt, FaPen, FaEye, FaPlus, FaCamera } from 'react-icons/fa';
 
 import Navigator from './../Navigation';
 
-import { Container, HousesContainer, House, AddHouse, Preview, DLE } from './styles';
+import { Container, HousesContainer, House, AddHouse, Preview, DLE, NoHouse } from './styles';
 
 export default () => {
   const [houses, setHouses] = useState([]);
@@ -160,7 +160,7 @@ export default () => {
       </AddHouse>
 
       <HousesContainer>
-        {houses.map(home => 
+        { houses[0] ? houses.map(home => 
           <House key={home._id} BG={home.thumbnail}>
             <div className="img" />
             <div className="bottom">
@@ -199,7 +199,9 @@ export default () => {
               </div>
             </div>
           </House>
-        )}
+        ) :
+        <NoHouse>Ainda não tens nenhuma casa cadastrada. Cadastra já uma casa</NoHouse>
+      }
       </HousesContainer>
       <Navigator />
     </Container>

@@ -18,11 +18,7 @@ export default ({house, setVisibleBox, setVisible, setCurrentHouse}) => {
       <div className="content">
         <div className="location">
           {house.location}
-        </div>
-        <p className="location_long">
-          <MdLocationOn size={15} />
-          {house.location_long}
-        </p>
+        </div> 
         <p className="t">
           <FaBed size={15} />
           T{house.norooms}
