@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { MdLocationOn } from 'react-icons/md';
+// import { MdLocationOn } from 'react-icons/md';
 import { FaBed, FaMoneyBillAlt } from 'react-icons/fa';
 
 import { Container } from './styles';
