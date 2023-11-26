@@ -59,8 +59,8 @@ export default () => {
     data.append("block", block);
     data.append("building", building);
     data.append("price", price);
-    data.append("tipo", tipo);
-    data.append("norooms", rooms);
+    data.append("type", tipo);
+    data.append("number_of_rooms", rooms);
     data.append("description", description);
 
     for (const file of images) {

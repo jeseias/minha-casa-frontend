@@ -8,20 +8,17 @@ import { Container } from './styles';
 export default ({house, setVisibleBox, setVisible, setCurrentHouse}) => {
   return (
     <Container BG={house.thumbnail}>
-      <div 
-        className="img" 
+      <div
+        className="img"
         onClick={() => {
           setCurrentHouse(house);
-          setVisible(true)
+          setVisible(true);
         }}
       />
       <div className="content">
-        <div className="location">
-          {house.location}
-        </div> 
+        <div className="location">Block: {house.block}</div>
         <p className="t">
-          <FaBed size={15} />
-          T{house.norooms}
+          <FaBed size={15} />T{house.number_of_rooms}
         </p>
         <p className="price">
           <FaMoneyBillAlt size={15} />
@@ -32,8 +29,10 @@ export default ({house, setVisibleBox, setVisible, setCurrentHouse}) => {
             setCurrentHouse(house);
             setVisibleBox(true);
           }}
-        >Reservar</button>
+        >
+          Reservar
+        </button>
       </div>
     </Container>
-  )
+  );
 }
