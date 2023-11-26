@@ -21,7 +21,7 @@ export default () => {
       }
     }
     loadReservas()
-  }, [reservas]);
+  }, []);
 
   async function deleteBooking(id) {
     try {

@@ -13,13 +13,14 @@ export default ({ setApp }) => {
   const history = useHistory();
   const { url } = useRouteMatch();
 
-  const [telefone, setTelefone] = useState('');
+  const [phone, setPhone] = useState("");
   const [password, setPassword] = useState('');
 
   async function handleLogin() {
     try {
-      await api.post('/auth', {
-        telefone, password
+      await api.post("/auth", {
+        phone,
+        password,
       });
       
       setApp(true);
@@ -31,22 +32,24 @@ export default ({ setApp }) => {
 
   return (
     <Container>
-      <img src={LOGO} alt="imagen do site"/>
+      <img src={LOGO} alt="imagen do site" />
       <main>
-        <input 
-          value={telefone}
-          onChange={ e => setTelefone(e.target.value)}
-          type="number" 
+        <input
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          type="number"
           placeholder="912 345 678"
         />
-        <input 
+        <input
           value={password}
-          onChange={ e => setPassword(e.target.value)}
-          type="password" 
+          onChange={(e) => setPassword(e.target.value)}
+          type="password"
           placeholder="senha"
         />
-        <Button send onClick={() => handleLogin()}>Entrar</Button>
+        <Button send onClick={() => handleLogin()}>
+          Entrar
+        </Button>
       </main>
     </Container>
-  )
+  );
 }

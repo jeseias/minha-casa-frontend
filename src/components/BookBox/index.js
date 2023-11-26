@@ -13,7 +13,7 @@ export default ({ visibleBox, setVisibleBox, house: { location, thumbnail, price
       if(name && telefone) {
         await api.post('/bookings', {
           name,
-          telefone,
+          phone: telefone,
           house: _id
         });
         setVisibleBox(false);
